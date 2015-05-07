@@ -1,23 +1,23 @@
-﻿* {
+﻿html{
+    overflow: hidden;
+}
+h1, h2, h3, h4, h5, h6, p, a, li {
     color: rgb(60, 60, 60);
-font-family: 'Oxygen' sans-serif;
-    /*border: 1px solid red;*/
+    font-family: 'Oxygen' sans-serif;
 }
 
 
-body {
-   margin: 0;
-}
 
 h1 {
     font-size: 50px;
+    float: right;
+    font-weight: 300;
 }
 
 h4 {
+    float: left;
     font-size: 18px;
-    padding: 60px 100px;
-background: #F0F0F0;
-margin: 0;
+    margin-top: 21px;
 }
 
 h5 { font-size: 22px;font-weight: 100; }
@@ -26,11 +26,18 @@ p {
 font-size: 15px;
 }
 
+header {
+    padding: 40px 100px;
+    background: #F0F0F0;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+
 #portfolio {
     display: table;
     margin: 0 auto;
     
-    margin-top: 60px;
     
 }
 
@@ -38,15 +45,15 @@ font-size: 15px;
     position: relative;
     float: left;
     width: 180px;
-    margin: 50px 10px;
+    margin: 100px 40px;
     transition: margin-top linear 0.1s;
+    text-decoration: none;
     
-    //height: 440px;    
+    /*height: 440px;    */
 }
 
 #portfolio a:hover {
-    margin-top: 10px;
-    text-decoration: none;
+    margin-top: 0;
 }
 
 
@@ -60,7 +67,7 @@ font-size: 15px;
 
 #portfolio a p {
 
-    
+
 
     margin-top: 20px;
     color: rgb(100,100,100);
@@ -101,26 +108,9 @@ font-size: 15px;
     transition-delay:0.1s;
 }
 
-/*heading*/
-#portfolio h1 {
-    
-    position: relative;
-    left: 40%;
-     float: left;
-
-     font-weight: 300;
-
-     margin-right: 40px;
-     opacity: 0;
-
-    /*animation*/
-    animation: slideLeft 1.8s 0.2s 1 normal forwards;
-    -webkit-animation: slideLeft 1.8s 0.2s 1 normal forwards;
-
-}
 
 /*First image*/
-#portfolio a:nth-child(2) img {
+#portfolio a:nth-child(1) img {
 
     background: #ffffff url("/Images/cc.jpg") no-repeat center center;
     border: none;
@@ -132,7 +122,7 @@ font-size: 15px;
 }
 
 /*First image*/
-#portfolio a:nth-child(3) img {
+#portfolio a:nth-child(2) img {
 
    background: #ffffff url("/Images/gp.jpg") no-repeat center center;
     border: none;
@@ -143,7 +133,7 @@ font-size: 15px;
 }
 
 /*Third image*/
-#portfolio a:nth-child(4) img {
+#portfolio a:nth-child(3) img {
 
     background: #ffffff url("/Images/oldSite.jpg") no-repeat center center;
     border: none;
@@ -154,16 +144,10 @@ font-size: 15px;
 
 }
 
-footer {
-    padding: 0 20px;
-    border-top: 1px solid rgb(60, 60, 60);
-    width: 80%;
-    margin: 0 auto 40px auto;
-}
 
 @keyframes slideLeft {
     0% {opacity: 0;}
-    50% {left: 40%;opacity:1;}
+    50% {left: 100px;opacity:1;}
     100% {left: 0;opacity:1;}
 }
 
@@ -176,12 +160,12 @@ footer {
 
 @keyframes imagePop {
     0% {visibility: hidden; width: 10px; height: 10px;margin-top: 90px;}
-    80% {visibility:visible; width: 160px; height: 160px;margin-top:15px;}
-    100% {visibility:visible; width: 150px; height: 150px;margin-top:20px;}
+    80% {visibility:visible; width: 170px; height: 170px;margin-top:10px;}
+    100% {visibility:visible; width: 160px; height: 160px;margin-top:15px;}
 }
 
 @-webkit-keyframes imagePop {
     0% {visibility: hidden; width: 10px; height: 10px;margin-top: 90px;}
-    80% {visibility:visible; width: 160px; height: 160px;margin-top:15px;}
-    100% {visibility:visible; width: 150px; height: 150px;margin-top:20px;}
+    80% {visibility:visible; width: 170px; height: 170px;margin-top:10px;}
+    100% {visibility:visible; width: 160px; height: 160px;margin-top:15px;}
 }

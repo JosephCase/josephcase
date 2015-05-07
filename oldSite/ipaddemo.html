@@ -1,0 +1,343 @@
+
+
+<!-- This pages appears as an iframe in www.josephcase.net - The purpose of the page is to demonstate a simple JavaScript filter-->
+
+
+<!-- PLEASE VISIT http://www.josephcase.net/filterdemo TO SEE THIS CODE IN ACTION -->
+
+
+<!-- This page displays as a panel on the left with check boxes corresponding to different colors, shapes and sizes, with a filter button at the bottom. 
+
+To the right are 9 shapes of different colors, shapes and sizes, floated so that they appear in a 3 x 3 grid. Executing the filter on the left will remove unselected shapes -->
+
+
+
+<!DOCTYPE html> <!-- Tells the browser the page is written in HTML5 -->
+<html>
+<head>
+
+<!-- The below is a copied HTML5 shiv from https://code.google.com/p/html5shiv/ that allows pre IE9 to understand the HTML5 elements -->
+<!--[if lt IE 9]>
+<script src="dist/html5shiv.js"></script>
+<![endif]-->
+
+<title>Filter Demo</title>
+
+<!-- Meta to add information to the page -->
+<meta name="description" content="A demonstation of how JavaScript can be used to create a filter" />
+<meta http-equiv="author" content="Joseph Case" />
+
+
+
+<!-- Using link element to apply CSS -->
+<link href="basic.css" type="text/css" rel="stylesheet" /> <!-- CSS applied to whole site -->
+
+
+
+<!-- Using style element for CSS unique to this page-->
+<style type="text/css">
+body {
+	background-color: white;
+}
+#jframe { 
+	/* Contains the filter form and shapes */
+	
+	
+	
+	width: 100%;
+	height: 650px;
+	
+	
+	/* below using box-shadow to create a inserted shadow
+	box-shadow is not supported across all browsers so I've used the presets -moz- and -webkit- to make them compatible with Firefox, Chrome and Safari */
+	
+	box-shadow: inset 0 0 10px #777777;
+	-moz-box-shadow: inset 0 0 10px #777777;
+	-webkit-box-shadow: inset 0 0 10px #777777;
+		
+	background: white;
+	color: white;
+	
+	
+}
+#jframe>aside {
+	width: 30%;
+	height: 100%;
+	
+	
+	
+	float: left;
+	
+	
+	
+	background-color: #669966;
+	
+	/* Shadows as explained above */
+	box-shadow: 2px 0 5px #777777;
+	-moz-box-shadow: 2px 0 5px #777777;
+	-webkit-box-shadow: 2px 0 5px #777777;
+}
+
+form h2 { /* Styles the headers2; Colour, Shape and Size */
+	border-bottom: 3px solid white;
+	margin-bottom: 5px;
+}
+
+form label {
+	text-indent: 5px;
+	font-size: 18px;
+	padding: 5px;
+	display: block;
+	margin-left: 10px;
+}
+
+label:hover { /* Using the hover pseudo class to control the cursor style when hovering over the label text */
+	cursor: pointer;
+}
+
+input {
+	margin: 5px;
+}
+
+input[type="button"] { /* uses type = button to style just the filter button */
+	position: relative;
+	left: 10%;
+	font-size: 20px;
+	padding: 4px 0;
+	margin-top: 10px;
+	
+	width: 80%;
+	text-align: center;
+}
+
+#wrap2 {
+	width: 480px;
+	height: 480px;
+	float: left;
+	
+	position: relative;
+	left: 35%;
+	top: 50%;
+	margin-left: -240px;
+	margin-top: -240px;
+}
+
+.shape {
+	width: 100px;
+	height: 100px;
+	margin: 10px;
+	padding: 20px;
+	
+	float: left;
+	vertical-align: top;
+	
+	box-shadow: 0 0 10px #777777;
+	-moz-box-shadow: 0 0 10px #777777;
+	-webkit-box-shadow: 0 0 10px #777777;
+	
+	/* border-radius used to round the corners of the shape containing boxes */
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	
+	background-color: rgb(250,250,250); /* Not seen unless the image does not show */
+	display: block;
+}
+.shape:hover {
+	/* The shapes feel more interactive, they grow slightly when hovered over */
+		transform: scale(1.05, 1.05);
+		-moz-transform: scale(1.05, 1.05);
+		-webkit-transform: scale(1.05, 1.05);
+}
+
+</style><!-- End of CSS -->
+
+
+
+<!-- This is the JavaScript function that filters the displayed shapes-->
+<script>
+function runFilter (form) {
+	// Declaring the variables which are the check boxes on the left of the form, identified by their values.
+    var circle = form.circle;
+	var square = form.square;
+	var triangle = form.triangle;
+	
+	var blue = form.blue;
+	var red = form.red;
+	var yellow = form.yellow;
+	
+	var big = form.big;
+	var small= form.small;
+	
+	// Telling the shapes to display as blocks
+	// Each shape has been named individually
+	document.getElementById("big_red_tri").style.display="block";
+	document.getElementById("small_yellow_tri").style.display="block";
+	document.getElementById("small_blue_tri").style.display="block";
+	document.getElementById("big_blue_square").style.display="block";
+	document.getElementById("big_yellow_square").style.display="block";
+	document.getElementById("small_red_square").style.display="block";
+	document.getElementById("small_yellow_square").style.display="block";
+	document.getElementById("small_red_circle").style.display="block";
+	document.getElementById("big_blue_circle").style.display="block";
+	
+	//	---------------------------------------SHAPE---------------------------------------
+	// This section filters the shapes by their shape.
+	// It works negatively, so if they box is not checked, the shape is not displayed.
+	//if unchecked: this condition takes account for the scenario where no shapes are selected, assuming that the user does not want to filter by shape, it checks all shapes so that they are all included.
+	if (circle.checked==false && square.checked==false && triangle.checked==false) {
+		circle.checked=true;
+		square.checked=true;
+		triangle.checked=true;
+	} 
+	
+	//circle: removes circles
+	if (circle.checked==false) {
+		document.getElementById("small_red_circle").style.display="none";
+		document.getElementById("big_blue_circle").style.display="none";
+	}
+	
+	
+	// square: removes squares
+	if (square.checked==false) {
+		document.getElementById("big_blue_square").style.display="none";
+		document.getElementById("big_yellow_square").style.display="none";
+		document.getElementById("small_red_square").style.display="none";
+		document.getElementById("small_yellow_square").style.display="none";
+	}
+	
+	
+	// triangle: removes triangles
+	if (triangle.checked==false) {
+		document.getElementById("big_red_tri").style.display="none";
+		document.getElementById("small_yellow_tri").style.display="none";
+		document.getElementById("small_blue_tri").style.display="none";
+	}
+	
+	//	---------------------------------------COLOR---------------------------------------
+	// filters the shapes by their color
+	// please see shape conditions above as they are the same as these
+	//if unchecked
+	if (blue.checked==false && red.checked==false && yellow.checked==false) {
+		blue.checked=true;
+		red.checked=true;
+		yellow.checked=true;
+	}
+	
+	//blue
+	if (blue.checked==false) {
+		
+		document.getElementById("big_blue_square").style.display="none";
+		document.getElementById("big_blue_circle").style.display="none";
+		document.getElementById("small_blue_tri").style.display="none";
+	}
+	
+	// red
+	if (red.checked==false) {
+		
+		document.getElementById("small_red_circle").style.display="none";
+		document.getElementById("big_red_tri").style.display="none";
+		document.getElementById("small_red_square").style.display="none";
+		
+	}
+	
+	// yellow
+	if (yellow.checked==false) {
+		
+		document.getElementById("small_yellow_square").style.display="none";
+		document.getElementById("small_yellow_tri").style.display="none";
+		document.getElementById("big_yellow_square").style.display="none";
+	}
+	
+	//-----------------------Size------------------------------
+	// filters the shapes by their size
+	// please see shape conditions above as they are the same as these
+	
+	//if unchecked
+	if (big.checked==false && small.checked==false) {
+		big.checked=true;
+		small.checked=true;
+	}
+	
+	
+	// big
+	if (big.checked==false) {
+		
+		
+		document.getElementById("big_blue_circle").style.display="none";
+		document.getElementById("big_red_tri").style.display="none";
+		document.getElementById("big_yellow_square").style.display="none";
+		document.getElementById("big_blue_square").style.display="none";
+		
+	}
+	
+	// small
+	if (small.checked==false) {
+		
+		document.getElementById("small_yellow_square").style.display="none";
+		document.getElementById("small_yellow_tri").style.display="none";
+		document.getElementById("small_red_circle").style.display="none";
+		document.getElementById("small_red_square").style.display="none";
+		document.getElementById("small_blue_tri").style.display="none";
+
+		
+	}
+	
+}
+</script>
+
+
+</head>
+<!-- HTML body section -->
+<body>
+
+<div id="jframe">
+	<aside><!-- I have used HTML5 element aside to contain the form-->
+	
+	<!--The Form-->
+	<form name="filter" action="" method="get"><!-- The action is blank because the form information is not sent anywhere, it is instead 'read' by the JavaScript function above-->
+	<h2>Shape</h2>
+	<br />
+	<!-- Below you will see that I have used the labal element to allow the user to click anywhere on the text of check box in order to check it-->
+	<label><input type="checkbox" name="circle" value="circle"  />Circle</label>
+	<label><input type="checkbox" name="square" value="square"  />Square</label>
+	<label><input type="checkbox" name="triangle" value="triangle"  />Triangle</label>
+	<br />
+	<h2>Colour</h2>
+	<br />
+	<label><input type="checkbox" name="blue" value="blue"  />Blue</label> 
+	<label><input type="checkbox" name="red" value="red"  />Red</label> 
+	<label><input type="checkbox" name="yellow" value="yellow"  />Yellow</label>
+	<br />
+	<h2>Size</h2>
+	<br />
+	<label><input type="checkbox" name="big" value="big"  />Big</label>
+	<label><input type="checkbox" name="small" value="small"  />Small</label>
+	<br />
+	<input type="button" value="Filter" onClick="runFilter(this.form)">
+	</form>
+	</aside>
+	
+	
+	<div id="wrap2"><!-- div that acts as a frame to contain the shapes -->
+	
+	<!-- Below div elements containing the different images of shapes.
+	
+	They are given a unique id so that they can be identified by the JavaScript and a class of "shape" so that they can be controlled by the CSS above.
+	
+	These shapes were created using Adobe Photoshop Elements 11-->
+	
+	<div id="big_red_tri" class="shape"><img src="BRT.gif" alt="Big Red Triangle" /></div>
+	<div id="small_yellow_tri" class="shape"><img src="SYT.gif" alt="Small Yellow Triangle" /></div>
+	<div id="small_blue_tri" class="shape"><img src="SBT.gif" alt="Small Blue Triangle" /></div>
+	<div id="big_blue_square" class="shape"><img src="BBS.gif" alt="Big Blue Square" /></div>
+	<div id="big_yellow_square" class="shape"><img src="BYS.gif" alt="Big Yellow Square" /></div>
+	<div id="small_red_square" class="shape"><img src="SRS.gif" alt="Small Red Square" /></div>
+	<div id="small_yellow_square" class="shape"><img src="SYS.gif" alt="Small Yellow Square" /></div>
+	<div id="small_red_circle" class="shape"><img src="SRC.gif" alt="Small Red Circle" /></div>
+	<div id="big_blue_circle" class="shape"><img src="BBC.gif" alt="Big Blue Circle" /></div>
+	</div><!-- wrap2  -->
+	</div><!-- jframe -->
+	
+
+</body>

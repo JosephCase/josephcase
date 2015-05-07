@@ -1,0 +1,154 @@
+#navi {
+		position: absolute;
+		top: 115px;
+		width: 100%;
+		
+		
+		color: white;
+		
+	}
+#navb {
+		height: 35px;
+	
+		width: 90%;
+		margin: 20px auto;
+		background: rgb(120,0,0);
+		
+		
+		/* Shadow */
+		box-shadow: 0 0 10px black;
+		-moz-box-shadow: 0 0 10px black;
+		-webkit-box-shadow: 0 0 10px black;
+}
+#navi ul {
+		width: 600px;
+		margin: 0 auto;
+		text-align: center;	
+	}
+#navi>ul>li {
+		display: inline-block;
+		vertical-align: top;
+		background: none;
+}
+.style {
+		
+		
+		
+		min-width: 140px;
+		
+	}
+	.style>p {
+		
+		padding: 5px 15px;
+		height: 20px;
+		
+		/* Rounded cornders */
+		border-radius: 5px 5px 0 0;
+		-moz-border-radius: 5px 5px 0 0;
+		-webkit-border-radius: 5px 5px 0 0;
+		
+		font-size: 15px;
+		
+	}
+	#hide {
+		overflow: hidden;
+		max-height: 0;
+		
+		/* Height transition */
+		transition: max-height 0.5s ease;
+		-moz-transition: max-height 0.5s ease;
+		-webkit-transition: max-height 0.5s ease;
+		
+		
+	}
+	#drop1, #drop2, #drop3 {
+	margin: 0 5px 10px 5px;
+	
+	/* Shadow */
+	box-shadow: 0 5px 10px rgb(20,20,20);
+	-moz-box-shadow: 0 5px 10px rgb(20,20,20);
+	-webkit-box-shadow: 0 5px 10px rgb(20,20,20);
+	
+	position: relative;
+	
+	border-top: none;
+	
+	/* Rounded corners */
+	border-radius: 0 0 8px 8px;
+	-moz-border-radius: 0 0 8px 8px;
+	-webkit-border-radius: 0 0 8px 8px;
+	
+	overflow: hidden;
+	background: rgba(250,250,250,0.9);
+	color: black;
+	
+	}
+	#drop1 {
+		display: none;
+	}
+	#drop2 {
+	/* visibility: hidden; */
+	max-height: 0px;
+	
+	/* Scroll transition */
+	transition: max-height 0.5s ease;
+	-moz-transition: max-height 0.5s ease;
+	-webkit-transition: max-height 0.5s ease;
+	
+	
+	}
+	#drop3 {
+	
+	
+	top: -140px;
+	
+	/* Slide transition */
+	transition: top 0.5s ease;
+	-moz-transition: top 0.5s ease;
+	-webkit-transition: top 0.5s ease;
+	
+	}
+	
+	#drop1 p, #drop2 p, #drop3 p {
+	
+	padding: 5px 0;
+	}
+	#drop1 p:hover, #drop2 p:hover, #drop3 p:hover {
+		background: rgb(200,200,200);
+		cursor: pointer;
+		
+	}
+	
+	.style:hover {
+		
+		
+		cursor: pointer;
+		
+	}
+	.style:hover #drop1 {
+		display: block;
+	}
+	.style:hover #drop2 {
+		max-height: 160px;		
+	}	
+	.style:hover #drop3 {
+		top: 0px;
+	}	
+	.style:hover #hide {
+		max-height: 160px;
+	}
+	
+	.style:hover>p {
+		background: rgb(80,0,0);
+		
+		/* Inset shadow to give indented feeling */
+		box-shadow: inset 0 0 10px rgb(50,0,0);
+		-moz-box-shadow: inset 0 0 10px rgb(50,0,0);
+		-webkit-box-shadow: inset 0 0 10px rgb(50,0,0);
+		
+	}
+	
+	
+	
+	
+	
