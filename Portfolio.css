@@ -38,6 +38,9 @@ header {
     overflow-x: hidden;
     height: 20%
 }
+header.active {
+    cursor: pointer;
+}
 
 
 #portfolio {
@@ -56,9 +59,12 @@ header {
     height: 160px;
     /*transition: width linear 0.2s 0.2s, height linear 0.2s 0.2s, left linear 0.2s, top linear 0.2s, border-radius linear 0.2s 0.2s;*/
     /*transition: width linear 0.2s, height linear 0.2s, left linear 0.2s, top linear 0.2s, border-radius linear 0.2s;*/
-    transition: width linear 0.2s 0.4s, height linear 0.2s 0.4s, left linear 0.4s, top linear 0.2s 0.4s, border-radius linear 0.2s 0.4s;
+    /*transition: width linear 0.2s 0.4s, height linear 0.2s 0.4s, left linear 0.4s, top linear 0.2s 0.4s, border-radius linear 0.2s 0.4s;*/
+    /*transition: width linear 0.2s 0.2s, height linear 0.2s 0.2s, left linear 0.4s, top linear 0.2s 0.2s, border-radius linear 0.2s 0.2s;*/
+    transition: width linear 0.2s, height linear 0.2s, left linear 0.2s, top linear 0.2s, border-radius linear 0.2s;
     text-decoration: none;
-    border-radius: 50%
+    border-radius: 50%;
+    cursor: pointer;
 }
 
 #portfolio a.show {    
@@ -67,6 +73,7 @@ header {
     left: 0;
     top: 20%;
     border-radius: 0;
+    cursor: initial;
 }
 
 #portfolio a:nth-child(1) {
