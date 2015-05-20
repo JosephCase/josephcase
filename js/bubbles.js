@@ -25,11 +25,16 @@ var Bubbles = function() {
 		$target.addClass("show");
 		$("header").addClass("active");
 
-		$target.on("mousedown", function () {
-			me.resizeStart($target);
+		$resizer = $target.children(".resizer");
+
+		$resizer.on("mousedown", function () {
+			me.resizeStart($target, $resizer);
 		});
-		$target.on("mouseup", function () {
-			me.resizeEnd($target);
+		$("#portfolio").on("mouseup", function () {
+			me.resizeEnd($target, $resizer);
+		});
+		$("header").on("mouseover", function () {
+			me.resizeEnd($target, $resizer);
 		})
 
 	}
@@ -38,28 +43,35 @@ var Bubbles = function() {
 		$("header").addClass("active");
 		$target = $(".bubble");
 		$target.removeClass("show");
+		$(".bubble").on("click", function() {
+			me.openBubble(event);
+		})
 	}
 
-	this.resizeStart = function($target) {
-		$target.unbind("mousedown");
+	this.resizeStart = function($target, $resizer) {
+		$resizer.unbind("mousedown");
 
-		$target.on("mousemove", function () {
-			me.resize(event);
+		$iframe = $target.children("iframe");
+		$iframe.addClass("active");
+
+		$("#portfolio").on("mousemove", function () {
+			me.resize(event, $target);
 		});
 	}
 
-	this.resize = function(event) {
+	this.resize = function(event, $target) {
 		console.log("resize");
-		$iframe = $(event.target).children("iframe");
-		$iframe.css("width", event.pageX + "px");
+		$iframe = $target.children("iframe");
+		$iframe.css("width", event.pageX - 5 + "px");
 	}
 
-	this.resizeEnd = function($target) {
-		$target.unbind("mousemove");
-		$target.on("mousedown", function () {
-			me.resizeStart($target);
+	this.resizeEnd = function($target, $resizer) {
+		$("#portfolio").unbind("mousemove");
+		$iframe = $target.children("iframe");
+		$iframe.removeClass("active");
+		$resizer.on("mousedown", function () {
+			me.resizeStart($target, $resizer);
 		});
-
 	}			
 
 	this.contruct();
