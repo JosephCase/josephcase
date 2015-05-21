@@ -50,22 +50,27 @@ header.active {
     
 }
 
-#portfolio a {    
+#portfolio a {   
+z-index: 1; 
     border: 2px solid black;
-    left: 50%;
+    left: 40%;
     top: 50%;
     position: absolute;
     width: 160px;
     height: 160px;
-    transition: width linear 0.2s 0.2s, height linear 0.2s 0.2s, left linear 0.2s, top linear 0.2s, border-radius linear 0.2s 0.2s;
+    /*transition: width linear 0.2s 0.2s, height linear 0.2s 0.2s, left linear 0.2s, top linear 0.2s, border-radius linear 0.2s 0.2s;*/
     /*transition: width linear 0.2s, height linear 0.2s, left linear 0.2s, top linear 0.2s, border-radius linear 0.2s;*/
     /*transition: width linear 0.2s 0.4s, height linear 0.2s 0.4s, left linear 0.4s, top linear 0.2s 0.4s, border-radius linear 0.2s 0.4s;*/
     /*transition: width linear 0.2s 0.2s, height linear 0.2s 0.2s, left linear 0.4s, top linear 0.2s 0.2s, border-radius linear 0.2s 0.2s;*/
-    /*transition: width linear 0.2s, height linear 0.2s, left linear 0.2s, top linear 0.2s, border-radius linear 0.2s;*/
+    transition: width linear 0.2s, height linear 0.2s, left linear 0.2s, top linear 0.2s, border-radius linear 0.2s;
     text-decoration: none;
     border-radius: 50%;
-    cursor: pointer;
     overflow: hidden;
+    background-color: #fff;
+}
+
+#portfolio a:nth-of-type(2) {    
+    left: 50%;
 }
 
 #portfolio a iframe {
@@ -78,63 +83,48 @@ header.active {
     -webkit-user-select: none; /* Chrome/Safari */        
     -moz-user-select: none; /* Firefox */
     -ms-user-select: none; /* IE10+ */
+    cursor: pointer;
 }
 
+
+#portfolio a div {
+
+    float: left;
+    display: none;
+
+
+}
 
 #portfolio a .resizer {
     float: left;
     display: none;
-    position: relative;
     margin: 0 5px;
     width: 0;
     height: 100%;
-    border-right: 5px solid black;
+    border-right: 2px solid black;
     cursor: e-resize;
 }
 
 #portfolio a.show {    
+    z-index: 2;
     width: 100%;
     height: 80%;
     left: 0;
     top: 20%;
     border-radius: 0;
-    cursor: initial;
 }
 
 #portfolio a.show iframe {
-    width: 50%;
+    width: 60%;
     height: 100%;
     margin-left: 0;
     margin-top: 0;
-    pointer-events: auto;
 }
 
-#portfolio a.show iframe.active {
-    pointer-events: none;
-}
 
-#portfolio a.show .resizer {    
+#portfolio a.show div {    
     display: block;
 }
 
-#portfolio a:nth-child(1) {
-
-   /*background: pink url("/Images/gp2.jpg") no-repeat center center;*/
-
-}
 
 
-
-/*First image*/
-#portfolio a:nth-child(2) {
-
-   background: pink url("/Images/gp2.jpg") no-repeat center center;
-
-}
-
-/*Third image*/
-#portfolio a:nth-child(3) {
-
-   background: pink url("/Images/gp2.jpg") no-repeat center center;
-
-}

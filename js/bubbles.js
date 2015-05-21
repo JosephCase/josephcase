@@ -6,7 +6,10 @@ $( document ).ready(function() {
 
 var Bubbles = function() {
 	var me = this,
-		timeout;
+		device,
+		$target,
+		$resizer,
+		$iframe;
 
 	this.contruct = function() {
 		$("header").on("click", function() {
@@ -19,58 +22,57 @@ var Bubbles = function() {
 
 	this.openBubble = function(event) {
 
+		me.setupElements(event);
 
-		$target = $(event.target);
 		$target.unbind();
 		$target.addClass("show");
 		$("header").addClass("active");
 
-		$resizer = $target.children(".resizer");
-
 		$resizer.on("mousedown", function () {
-			me.resizeStart($target, $resizer);
+			me.resizeStart();
 		});
 		$("#portfolio").on("mouseup", function () {
-			me.resizeEnd($target, $resizer);
+			me.resizeEnd();
 		});
 		$("header").on("mouseover", function () {
-			me.resizeEnd($target, $resizer);
+			me.resizeEnd();
 		})
 
 	}
+
+	this.setupElements = function(event) {
+		$target = $(event.target);
+		$resizer = $target.children(".resizer");
+		$iframe = $target.children("iframe");
+	}
+
 	this.closeBubbles = function() {
 
-		$("header").addClass("active");
-		$target = $(".bubble");
+		$("header").removeClass("active");
 		$target.removeClass("show");
 		$(".bubble").on("click", function() {
 			me.openBubble(event);
 		})
 	}
 
-	this.resizeStart = function($target, $resizer) {
+	this.resizeStart = function() {
 		$resizer.unbind("mousedown");
 
-		$iframe = $target.children("iframe");
-		$iframe.addClass("active");
 
 		$("#portfolio").on("mousemove", function () {
-			me.resize(event, $target);
+			me.resize(event);
 		});
 	}
 
-	this.resize = function(event, $target) {
+	this.resize = function(event) {
 		console.log("resize");
-		$iframe = $target.children("iframe");
 		$iframe.css("width", event.pageX - 5 + "px");
 	}
 
-	this.resizeEnd = function($target, $resizer) {
+	this.resizeEnd = function() {
 		$("#portfolio").unbind("mousemove");
-		$iframe = $target.children("iframe");
-		$iframe.removeClass("active");
 		$resizer.on("mousedown", function () {
-			me.resizeStart($target, $resizer);
+			me.resizeStart();
 		});
 	}			
 

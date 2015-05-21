@@ -1,0 +1,27 @@
+
+
+PHASE 1
+
+1. Sort out bubble.js to use global variables.
+2. Add links to iframes
+3. Sort expanding animation
+4. Sort out cursors
+5. add text
+6. Add fonts to project
+7. Add new work
+	7.1 Microsite
+	7.2 PWP
+8. Style
+
+
+
+PHASE 2
+
+1. Show to Hamish for theme advice
+
+
+
+PHASE 3
+
+1. Add moving partical effect.
+2. Add scrolling between projects
