@@ -2,7 +2,6 @@
 
 PHASE 1
 
-1. Sort out bubble.js to use global variables.
 2. Add links to iframes
 3. Sort expanding animation
 4. Sort out cursors

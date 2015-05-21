@@ -9,7 +9,7 @@ var Bubbles = function() {
 		device,
 		$target,
 		$resizer,
-		$iframe;
+		$iframeHolder;
 
 	this.contruct = function() {
 		$("header").on("click", function() {
@@ -36,14 +36,15 @@ var Bubbles = function() {
 		});
 		$("header").on("mouseover", function () {
 			me.resizeEnd();
-		})
+		});
+
 
 	}
 
 	this.setupElements = function(event) {
 		$target = $(event.target);
 		$resizer = $target.children(".resizer");
-		$iframe = $target.children("iframe");
+		$iframeHolder = $target.children(".iframeHolder");
 	}
 
 	this.closeBubbles = function() {
@@ -58,6 +59,7 @@ var Bubbles = function() {
 	this.resizeStart = function() {
 		$resizer.unbind("mousedown");
 
+		$iframeHolder.addClass("active");
 
 		$("#portfolio").on("mousemove", function () {
 			me.resize(event);
@@ -66,11 +68,12 @@ var Bubbles = function() {
 
 	this.resize = function(event) {
 		console.log("resize");
-		$iframe.css("width", event.pageX - 5 + "px");
+		$iframeHolder.css("width", event.pageX + "px");
 	}
 
 	this.resizeEnd = function() {
 		$("#portfolio").unbind("mousemove");
+		$iframeHolder.removeClass("active");
 		$resizer.on("mousedown", function () {
 			me.resizeStart();
 		});
