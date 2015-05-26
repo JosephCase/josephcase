@@ -9,7 +9,8 @@ var Bubbles = function() {
 		device,
 		$target,
 		$resizer,
-		$iframeHolder;
+		$iframeHolder,
+		$text;
 
 	this.contruct = function() {
 		$("header").on("click", function() {
@@ -45,6 +46,7 @@ var Bubbles = function() {
 		$target = $(event.target);
 		$resizer = $target.children(".resizer");
 		$iframeHolder = $target.children(".iframeHolder");
+		$text = $target.children(".text");
 	}
 
 	this.closeBubbles = function() {
@@ -69,6 +71,7 @@ var Bubbles = function() {
 	this.resize = function(event) {
 		console.log("resize");
 		$iframeHolder.css("width", event.pageX + "px");
+		$text.css("width", ($target.width() - event.pageX) + "px");
 	}
 
 	this.resizeEnd = function() {
