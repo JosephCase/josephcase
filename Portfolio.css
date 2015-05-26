@@ -77,25 +77,37 @@ a.show {
 }
 
 a .iframeHolder {
-    position: relative;
-    float: left;
-    width: 500%;
-    height: 300%;
-    margin-left: -100%;
-    margin-top: -100%;
-    cursor: pointer;
-    pointer-events: none;
-    -webkit-user-select: none; /* Chrome/Safari */        
-    -moz-user-select: none; /* Firefox */
-    -ms-user-select: none; /* IE10+ */
-    padding-left: 20px;
-    box-sizing: border-box;
-    border: 2px solid black;
+  position: relative;
+  float: left;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  pointer-events: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  padding-left: 20px;
+  box-sizing: border-box;
+}
+
+a.show .iframeHolder {
+    pointer-events: auto;
+    /*width: 60%;
+    height: 100%;*/
+    margin-left: 0;
+    margin-top: 0;
 }
 
 a iframe {
+    width: 500%;
+    height: 500%;
+    margin-left: -200%;
+}
+
+a.show iframe {
     width: 100%;
     height: 100%;
+    margin-left: 0;
 }
 
 
@@ -125,28 +137,24 @@ a.show .resizer {
     display: block;
 }
 
-a.show .iframeHolder {
-    pointer-events: auto;
-    width: 60%;
-    height: 100%;
-    margin-left: 0;
-    margin-top: 0;
-}
 
-a .iframeHolder div.iframeCover {
+
+a .iframeCover {
     position: absolute;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(300,300,300,0.1);
+    background-color: rgba(200,200,200,0.1);
+    box-shadow: 0 0 10px #000 inset;
+    border-radius: 50%;
 }
 
-a.show .iframeHolder .iframeCover {
+a.show .iframeCover {
     display: none;
 }
 
-a.show .iframeHolder.active .iframeCover {
+a.show .iframeCover {
     display: block;
 }
 
