@@ -24,9 +24,17 @@ function Scroller() {
 
 	var lastScrollTop = $(window).scrollTop();
 
+	function test(e) {
+	  // e = e || window.event;
+	  e.preventDefault();
+	  // e.returnValue = false;  
+	}
+
 	function scrollPage(e) {
 
 		detachScroll();
+
+		
 
 		var $element;
 
@@ -41,7 +49,7 @@ function Scroller() {
 				console.log(sections[i], i, "down");
 				$element = $(sections[i]);
 			}
-			if ((sections[i].getBoundingClientRect().bottom < (windowHeight * 0.4) && sections[i].getBoundingClientRect().bottom > (windowHeight * 0.2))) {
+			if ((sections[i].getBoundingClientRect().bottom < (windowHeight * 0.5) && sections[i].getBoundingClientRect().bottom > (windowHeight * 0.3))) {
 				
 				console.log(sections[i], i, "up");
 				$element = $(sections[i]);
@@ -50,11 +58,13 @@ function Scroller() {
 		};
 		
 		if ($element) {
+			// window.onwheel = test; // modern standard
 			$("html body").animate({
-			    scrollTop: $element.offset().top
+			    scrollTop: $element.offset().top - (windowHeight * 0.1)
 			}, 500, function() {
 				lastScrollTop = $(this).scrollTop();
 				attachScroll()
+				// window.onwheel = null; // modern standard
 			});
 		} else {
 			lastScrollTop = $(this).scrollTop();
