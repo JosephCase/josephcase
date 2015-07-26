@@ -61,7 +61,7 @@ function Scroller() {
 			// window.onwheel = test; // modern standard
 			$("html body").animate({
 			    scrollTop: $element.offset().top - (windowHeight * 0.1)
-			}, 500, function() {
+			}, 300, function() {
 				lastScrollTop = $(this).scrollTop();
 				attachScroll()
 				// window.onwheel = null; // modern standard
