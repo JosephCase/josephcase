@@ -42,11 +42,13 @@ header div h5{
 section {
     height: 85vh;
 }
-section div.image {
+section .image {
 	width: 72%;
 	height: 100%;
 	float: left;
-	background-image: src("img/cc.jpg");
+	background-image: url("img/cc.jpg");
+	background-repeat: no-repeat;
+	background-size: 100%;
 }
 section div.text {
   	font-size: 14px;
