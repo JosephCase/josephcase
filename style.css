@@ -1,5 +1,11 @@
 body {
 	overflow-y: hidden;
+    font-family: "Oxygen", sans-serif;
+    color: #232323;
+}
+h1 {
+    font-size: 3.8vh;
+    font-weight: normal;	
 }
 header {
 	height: 15vh;
@@ -7,8 +13,13 @@ header {
 	background-color: #ebebeb;
 }
 header h1{
-	float: left;
-	font: @font-family("Oxygen");
+	    float: left;
+    /*vertical-align: middle;*/
+    height: 100%;
+    line-height: 15vh;
+    font-weight: normal;
+    font-size: 3vh;
+    margin-left: 7.5vh;
 }
 header div{
 	position: relative;
@@ -29,14 +40,25 @@ header div h5{
 	margin: auto;
 }
 section {
-    height: 88vh;
+    height: 85vh;
 }
 section div.image {
 	width: 72%;
 	height: 100%;
 	float: left;
+	background-image: src("img/cc.jpg");
 }
 section div.text {
+  	font-size: 14px;
+  line-height: 1.2;
 	width: 28%;
+	height: 100%;
 	float: left;
+	background-color: #f7f7f7;
+	padding: 38px;
+	box-sizing: border-box;
 }
+section div.text p {
+	margin: 36px 0 85px;
+}
+
