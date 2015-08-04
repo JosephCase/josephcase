@@ -1,16 +1,31 @@
 body {
 	overflow-y: hidden;
     font-family: "Oxygen", sans-serif;
+  line-height: 1.2;
     color: #232323;
 }
 h1 {
     font-size: 3vh;	
 }
 header {
+	z-index: 10;
+    position: absolute;
 	height: 15vh;
 	/*height: 120px;*/
 	background-color: #ebebeb;
 	overflow: hidden;
+	width: 100%;
+    box-sizing: border-box;
+    top: 0;
+    left: 0;
+    transition: all 0.8s;
+}
+body.initial header {
+	width: 60%;
+    height: 20vh;
+    padding-top: 2.5vh;
+    top: 40vh;
+    left: 20%;
 }
 header h1{
 	    float: left;
@@ -29,7 +44,8 @@ header div{
 	top: 0;
 	transition: top 0.5s;
 }
-header div:hover {
+header div:hover, 
+header div.active  {
 	top: -7.5vh;
 }
 header div img{
@@ -47,22 +63,41 @@ header div h5{
 	opacity: 0;
 	transition: opacity 0.5s;
 }
-header div:hover h5{
+header div:hover h5,
+header div.active h5{
 	opacity: 1;
 	transition-delay: 0.2s;
 }
 section {
     height: 85vh;
+    position: absolute;
+   	width: 100%;
+   	top: 15vh;
+   	transition: opacity 0s;
+	transition-delay: 0.8s;
+	overflow: hidden;
+}
+body.initial section {
+	opacity: 0;
 }
 section .image {
+	position: absolute;
+	top: -100%;
+
+
 	width: 72%;
 	height: 100%;
-	float: left;
+
 	background-image: url("img/cc.jpg");
 	background-repeat: no-repeat;
 	background-size: 100%;
 	border: 1px solid #e3e3e3;
 	box-sizing: border-box;
+   	transition: all 0.8s;
+}
+section.active .image {
+	top: 0;
+	transition-delay: 1s;
 }
 section .image a{
 	display: block;
@@ -70,16 +105,21 @@ section .image a{
 	height: 100%;
 }
 section div.text {
+	position: absolute;
+	right: -28%;
   	font-size: 14px;
-  line-height: 1.2;
 	width: 28%;
 	height: 100%;
-	float: left;
 	background-color: #fff;
 	padding: 38px;
 	border: 1px solid #e3e3e3;
 	box-sizing: border-box;
 	margin-left: -1px;
+   	transition: all 0.8s;
+}
+section.active div.text {
+	right: 0;
+	transition-delay: 1.4s;
 }
 section div.text p {
 	margin: 36px 0 85px;
