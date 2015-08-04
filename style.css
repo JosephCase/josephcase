@@ -12,6 +12,7 @@ header {
     position: absolute;
 	height: 15vh;
 	/*height: 120px;*/
+	padding: 0 8vh;
 	background-color: #ebebeb;
 	overflow: hidden;
 	width: 100%;
@@ -32,7 +33,6 @@ header h1{
     /*vertical-align: middle;*/
     height: 100%;
     line-height: 15vh;
-    margin-left: 7.5vh;
 }
 header div{
 	position: relative;
@@ -86,8 +86,9 @@ body.initial section {
 }
 section .image {
 	position: absolute;
+	opacity: 0;
 	top: -100%;
-
+	left: 10px;
 	width: 80%;
 	height: 100%;
 
@@ -98,12 +99,14 @@ section .image {
 }
 section.active .image {
 	top: 0;
-   	transition: top 1.2s;
-	transition-delay: 1.4s;
+	opacity: 1;
+   	transition: all 1.2s;
+	transition-delay: 0s;
 }
 section.active.remove .image {
 	top: -100%;
-   	transition: top 1.2s;
+	opacity: 0;
+   	transition: all 1.2s;
 	transition-delay: 0s;
 }
 
@@ -123,25 +126,27 @@ section .image a{
 }
 section div.text {
 	position: absolute;
+	opacity: 0;
 	top: 0;
 	right: -20%;
   	font-size: 14px;
 	width: 20%;
 	height: 100%;
-	background-color: #fff;
+	background-color: #ebebeb;
 	padding: 38px;
 	border: 1px solid #e3e3e3;
 	box-sizing: border-box;
-	margin-left: -1px;
 }
 section.active div.text {
-	right: 20px;
-   	transition: right 1.2s;
-	transition-delay: 1.6s;
+	right: 10px;
+	opacity: 1;
+   	transition: all 1.2s;
+	transition-delay: 0s;
 }
 section.active.remove div.text {
 	right: -20%;
-   	transition: right 1.2s;
+	opacity: 0;
+   	transition: all 1.2s;
 	transition-delay: 0s;
 }
 section div.text p {
