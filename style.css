@@ -18,7 +18,7 @@ header {
     box-sizing: border-box;
     top: 0;
     left: 0;
-    transition: all 0.8s;
+    transition: all 0.6s, width 0.6s 0.6s, left 0.6s 0.6s;
 }
 body.initial header {
 	width: 60%;
@@ -69,13 +69,17 @@ header div.active h5{
 	transition-delay: 0.2s;
 }
 section {
+	z-index: 1;
     height: 85vh;
     position: absolute;
    	width: 100%;
    	top: 15vh;
    	transition: opacity 0s;
-	transition-delay: 0.8s;
+	transition-delay: 1s;
 	overflow: hidden;
+}
+section.active {
+	z-index: 2;
 }
 body.initial section {
 	opacity: 0;
@@ -83,7 +87,6 @@ body.initial section {
 section .image {
 	position: absolute;
 	top: -100%;
-	left: 0;
 
 	width: 72%;
 	height: 100%;
@@ -95,20 +98,23 @@ section .image {
 }
 section.active .image {
 	top: 0;
-   	transition: top 0.8s;
-	transition-delay: 1s;
+   	transition: top 1.2s;
+	transition-delay: 1.4s;
 }
 section.active.remove .image {
-	left: -72%;
-   	transition: left 0.8s;
+	top: -100%;
+   	transition: top 1.2s;
 	transition-delay: 0s;
 }
 
 section.classic-collection .image {	
-	background-image: url("img/cc.jpg");
+	/*background-image: url("img/cc.jpg");*/
 }
 section.artist-portfolio .image {	
-	background-image: url("img/gp.jpg");
+	/*background-image: url("img/gp.jpg");*/
+}
+section.lowcost .image {	
+	/*background-image: url("img/lch.jpg");*/
 }
 section .image a{
 	display: block;
@@ -129,14 +135,14 @@ section div.text {
 	margin-left: -1px;
 }
 section.active div.text {
-	right: 0;
-   	transition: right 0.6s;
+	right: 20px;
+   	transition: right 1.2s;
 	transition-delay: 1.4s;
 }
 section.active.remove div.text {
-	top: 100%;
-   	transition: top 0.8s;
-	transition-delay: 0.4s;
+	right: -28%;
+   	transition: right 1.2s;
+	transition-delay: 0s;
 }
 section div.text p {
 	margin: 36px 0 85px;
