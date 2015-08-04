@@ -88,7 +88,7 @@ section .image {
 	position: absolute;
 	top: -100%;
 
-	width: 72%;
+	width: 80%;
 	height: 100%;
 
 	background-repeat: no-repeat;
@@ -124,9 +124,9 @@ section .image a{
 section div.text {
 	position: absolute;
 	top: 0;
-	right: -28%;
+	right: -20%;
   	font-size: 14px;
-	width: 28%;
+	width: 20%;
 	height: 100%;
 	background-color: #fff;
 	padding: 38px;
@@ -137,10 +137,10 @@ section div.text {
 section.active div.text {
 	right: 20px;
    	transition: right 1.2s;
-	transition-delay: 1.4s;
+	transition-delay: 1.6s;
 }
 section.active.remove div.text {
-	right: -28%;
+	right: -20%;
    	transition: right 1.2s;
 	transition-delay: 0s;
 }
