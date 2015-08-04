@@ -9,6 +9,10 @@ function Page() {
 	 	$(".bubble.active").removeClass("active");
 	 	$(this).addClass("active");
 	 	$("body.initial").removeClass("initial");
+		$('section.active').addClass("remove");
 		$('#' + this.getAttribute('data-section')).addClass("active");
+		setTimeout(function() {
+			$('section.remove').removeClass("remove active");
+		}, 1200);
 	});
 }

@@ -83,21 +83,32 @@ body.initial section {
 section .image {
 	position: absolute;
 	top: -100%;
-
+	left: 0;
 
 	width: 72%;
 	height: 100%;
 
-	background-image: url("img/cc.jpg");
 	background-repeat: no-repeat;
 	background-size: 100%;
 	border: 1px solid #e3e3e3;
 	box-sizing: border-box;
-   	transition: all 0.8s;
 }
 section.active .image {
 	top: 0;
+   	transition: top 0.8s;
 	transition-delay: 1s;
+}
+section.active.remove .image {
+	left: -72%;
+   	transition: left 0.8s;
+	transition-delay: 0s;
+}
+
+section.classic-collection .image {	
+	background-image: url("img/cc.jpg");
+}
+section.artist-portfolio .image {	
+	background-image: url("img/gp.jpg");
 }
 section .image a{
 	display: block;
@@ -106,6 +117,7 @@ section .image a{
 }
 section div.text {
 	position: absolute;
+	top: 0;
 	right: -28%;
   	font-size: 14px;
 	width: 28%;
@@ -115,11 +127,16 @@ section div.text {
 	border: 1px solid #e3e3e3;
 	box-sizing: border-box;
 	margin-left: -1px;
-   	transition: all 0.8s;
 }
 section.active div.text {
 	right: 0;
+   	transition: right 0.6s;
 	transition-delay: 1.4s;
+}
+section.active.remove div.text {
+	top: 100%;
+   	transition: top 0.8s;
+	transition-delay: 0.4s;
 }
 section div.text p {
 	margin: 36px 0 85px;
