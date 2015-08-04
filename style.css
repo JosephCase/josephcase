@@ -1,5 +1,5 @@
 body {
-	overflow-y: hidden;
+	overflow: hidden;
     font-family: "Oxygen", sans-serif;
   line-height: 1.2;
     color: #232323;
@@ -70,13 +70,15 @@ header div.active h5{
 }
 section {
 	z-index: 1;
-    height: 85vh;
+    height: 81vh;
     position: absolute;
-   	width: 100%;
+   	width: 98%;
    	top: 15vh;
    	transition: opacity 0s;
 	transition-delay: 1s;
-	overflow: hidden;
+	overflow: show;
+	
+	margin: 2vh 1%;
 }
 section.active {
 	z-index: 2;
@@ -86,7 +88,7 @@ body.initial section {
 }
 section .image {
 	position: absolute;
-	top: -100%;
+	top: -85vh;
 
 	width: 80%;
 	height: 100%;
@@ -102,7 +104,7 @@ section.active .image {
 	transition-delay: 1.4s;
 }
 section.active.remove .image {
-	top: -100%;
+	top: -85vh;
    	transition: top 1.2s;
 	transition-delay: 0s;
 }
@@ -124,23 +126,22 @@ section .image a{
 section div.text {
 	position: absolute;
 	top: 0;
-	right: -20%;
+	right: -21%;
   	font-size: 14px;
 	width: 20%;
 	height: 100%;
 	background-color: #fff;
-	padding: 38px;
+	/*padding: 38px;*/
 	border: 1px solid #e3e3e3;
-	box-sizing: border-box;
-	margin-left: -1px;
+	padding-left: 18px;
 }
 section.active div.text {
-	right: 20px;
+	right: 0;
    	transition: right 1.2s;
 	transition-delay: 1.6s;
 }
 section.active.remove div.text {
-	right: -20%;
+	right: -21%;
    	transition: right 1.2s;
 	transition-delay: 0s;
 }
