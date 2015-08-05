@@ -17,7 +17,10 @@ function Page() {
 	function openHeader(section) {
 		console.log("openHeader");
 		 $("body.initial").removeClass("initial");
-		 onTransitionEnd($("header")[0], function() {console.log("transition finished")}, section);
+		 setTimeout(function() {
+		 	show(section);
+		 }, 1200);
+		 // onTransitionEnd($("header")[0], function() {console.log("transition finished")}, section);
 	}
 
 	function show(section) {
