@@ -34,12 +34,9 @@ function Page() {
 		//need to make this more defensive
 		if (!$(section).hasClass("active")) {
 			$(".bubble.active").removeClass("active");
-		 	$(section).addClass("active");
-			$('section.active').addClass("remove");
+			$('section.active').removeClass("active");
 			$('#' + section.getAttribute('data-section')).addClass("active");
-			setTimeout(function() {
-				$('section.remove').removeClass("remove active");
-			}, 1200);
+		 	$(section).addClass("active");
 		}
 	}
 
