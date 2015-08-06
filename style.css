@@ -21,14 +21,13 @@ div.content {
 }
 h1 {
     font-size: 34px;	
-    /*font-family: 'Slabo 27px', serif;*/
-    font-family: 'Indie Flower', cursive;
-    font-weight: normal;
+    font-family: 'Slabo 27px', serif;
+    /*font-family: 'Indie Flower', cursive;*/
 }
 h2 {
     font-size: 30px;	
-    /*font-family: 'Slabo 27px', serif;*/
-    font-family: 'Indie Flower', cursive;
+    font-family: 'Slabo 27px', serif;
+    /*font-family: 'Indie Flower', cursive;*/
     font-weight: normal;
 	float: left;
     line-height: 17vh;
