@@ -5,22 +5,28 @@ document.addEventListener("DOMContentLoaded", function(event) {
 });
 
 function Page() {
-	$(".bubble").on( "click", function() {
-		if ($("body").hasClass("initial")) {			
-			openHeader(this);
-		} else {
-			show(this);
-		}
-			 	
+
+	start();
+
+	var opening = setTimeout(openHeader, 5000);
+
+	$("header").on( "click", function() {
+		clearTimeout(opening);
+		openHeader();
+		$(this).remove("click");
 	});
 
-	function openHeader(section) {
+	$(".bubble").on( "click", function() {
+		show(this);			 	
+	});
+
+	function start() {
+		document.body.className = "initial";
+	}
+
+	function openHeader() {
 		console.log("openHeader");
-		 $("body.initial").removeClass("initial");
-		 setTimeout(function() {
-		 	show(section);
-		 }, 1200);
-		 // onTransitionEnd($("header")[0], function() {console.log("transition finished")}, section);
+		$("body.initial").removeClass("initial");
 	}
 
 	function show(section) {
