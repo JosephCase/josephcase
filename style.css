@@ -1,8 +1,12 @@
 body {
 	overflow: hidden;
-    font-family: "Oxygen", sans-serif;
-  line-height: 1.2;
+    /*font-family: "Oxygen", sans-serif;*/
+    /*font-family: 'Source Sans Pro', sans-serif;*/
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 15px;
+  	line-height: 1.2;
     color: #545454;
+    background-color: rgba(0,0,0,0.1);
 }
 * {
 	border-radius: 1px;
@@ -16,7 +20,23 @@ div.content {
 	position: relative;
 }
 h1 {
+    font-size: 34px;	
+    /*font-family: 'Slabo 27px', serif;*/
+    font-family: 'Indie Flower', cursive;
+    font-weight: normal;
+}
+h2 {
     font-size: 30px;	
+    /*font-family: 'Slabo 27px', serif;*/
+    font-family: 'Indie Flower', cursive;
+    font-weight: normal;
+	float: left;
+    line-height: 17vh;
+}
+h5 {
+    font-family: 'Indie Flower', cursive;
+    font-size: 16px;
+    font-weight: bold;
 }
 header {
     position: absolute;
@@ -32,7 +52,7 @@ header {
     left: 50%;
     transform: translateX(-50%);
     transition: all 1s 0.6s, top 0.6s, opacity 2s 1s;
-    background-color: rgba(0,0,0,0.05);
+    background-color: #fff;
     box-shadow: 2px 4px 10px rgba(0,0,0,0.1);
     z-index: 5;
 }
@@ -43,11 +63,6 @@ body.initial header {
 	min-width: 1px;
     top: 41.5%;
     cursor: pointer;
-}
-header h1{
-	float: left;
-    /*vertical-align: middle;*/
-    line-height: 17vh;
 }
 header div{
 	/*display: none;*/
@@ -99,7 +114,6 @@ section {
    	left: 0;
    	transition: opacity 0s;
 	transition-delay: 1s;
-	padding-bottom: 5%;
 }
 section.active {
 	z-index: 2;
@@ -148,11 +162,12 @@ section div.text {
     top: 2.4vh;
 	right: -25.9%;
   	font-size: 14px;
+    font-weight: 600;
 	width: 23.5%;
     height: 75.6vh;
 	background-color: #ebebeb;
-	padding: 0 1.2%;
-    background-color: rgba(0,0,0,0.05);
+	padding: 50px 2%;
+    background-color: #fff;
     box-shadow: 2px 4px 10px rgba(0,0,0,0.1);
 	box-sizing: border-box;
    	transition: all 0.8s;
@@ -162,8 +177,13 @@ section.active div.text {
 	opacity: 1;
 	transition-delay: 0.2s;
 }
+
+
 section div.text p {
-	margin: 36px 0 85px;
+	margin: 60px 0 40px;
+	font-size: 15px;
+	font-size: 16px;
+	font-style: italic;
 }
 
 section div.text li {
@@ -172,6 +192,7 @@ section div.text li {
 }
 section div.text a {
 	position: absolute;
-	bottom: 78px;
+	bottom: 50px;
+	font-size: 16px;
 }
 
