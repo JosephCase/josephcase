@@ -20,8 +20,9 @@ div.content {
 	position: relative;
 }
 h1 {
-    font-size: 34px;	
+    font-size: 30px;	
     font-family: 'Slabo 27px', serif;
+    font-weight: normal;
     /*font-family: 'Indie Flower', cursive;*/
 }
 h2 {
@@ -33,7 +34,7 @@ h2 {
     line-height: 17vh;
 }
 h5 {
-    font-family: 'Indie Flower', cursive;
+    /*font-family: 'Indie Flower', cursive;*/
     font-size: 16px;
     font-weight: bold;
 }
