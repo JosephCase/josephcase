@@ -10,10 +10,10 @@ function Page() {
 
 	var opening = setTimeout(openHeader, 5000);
 
-	$("header").on( "click", function() {
+	$("h2").on("click", function() {
+		$(this).unbind("click");
 		clearTimeout(opening);
 		openHeader();
-		$(this).remove("click");
 	});
 
 	$(".bubble").on( "click", function() {
@@ -34,9 +34,8 @@ function Page() {
 	function show(section) {
 		console.log("show");
 		//need to make this more defensive
-		if($("h4.about").hasClass("show")) {
-			$("h4.about").removeClass("show");
-		}
+		$(".about.show").removeClass("show"); //removes show class if it has it
+
 		if (!$(section).hasClass("active")) {
 			$(".bubble.active").removeClass("active");
 			$('section.active').removeClass("active");
