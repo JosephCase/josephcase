@@ -27,11 +27,16 @@ function Page() {
 	function openHeader() {
 		console.log("openHeader");
 		$("body.initial").removeClass("initial");
+		$("h4.about").addClass("show");
+
 	}
 
 	function show(section) {
 		console.log("show");
 		//need to make this more defensive
+		if($("h4.about").hasClass("show")) {
+			$("h4.about").removeClass("show");
+		}
 		if (!$(section).hasClass("active")) {
 			$(".bubble.active").removeClass("active");
 			$('section.active').removeClass("active");
