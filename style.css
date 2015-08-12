@@ -1,5 +1,5 @@
 body {
-	overflow: hidden;
+	/*overflow: hidden;*/
     /*font-family: "Oxygen", sans-serif;*/
     /*font-family: 'Source Sans Pro', sans-serif;*/
     font-family: 'Josefin Sans', sans-serif;
@@ -44,7 +44,7 @@ h5 {
 header {
     position: absolute;
     opacity: 1;
-    min-width: 97.6%;
+    min-width: 160vh;
     height: 17%;
 	z-index: 10;
 	/*padding: 0 3.4%;*/
@@ -142,31 +142,44 @@ body.initial section {
 	opacity: 0;
 }
 section .image {
-	position: absolute;
 	opacity: 0;
-	top: 2.4vh;
-    left: -74.1%;
-	width: 72.9%;
-    height: 75.6vh;
 
-/*	background-repeat: no-repeat;
-	background-size: 100%;*/
+	padding-top: 10vh;
+    display: block;
+    height: 40vh;
+    overflow: hidden;
+    width: 100vw;
+    margin-left: 50%;
+    transform: translateX(-50%);
+
+	background-repeat: no-repeat;
+	background-size: 100%;
     background-color: rgba(0,0,0,0.05);
     
-	box-sizing: border-box;
+	/*box-sizing: border-box;*/
    	transition: all 0.8s;
+}
+section .image img {
+	position: relative;
+    margin: auto;
+    display: block;
+    box-shadow: 0 0 10px #5a5a5a;
 }
 section.active .image {
     left: 1.2%;
-	opacity: 1;
+    opacity: 0.5;
 	transition-delay: 0.2s;
+}
+
+section.active .image:hover {
+	opacity: 0.8;
 }
 
 section.classic-collection .image {	
 	/*background-image: url("img/cc.jpg");*/
 }
 section.artist-portfolio .image {	
-	/*background-image: url("img/gp.jpg");*/
+	/*background-image: url("img/gp_wide.jpg");*/
 }
 section.lowcost .image {	
 	/*background-image: url("img/lch.jpg");*/
@@ -177,7 +190,7 @@ section .image a{
 	height: 100%;
 }
 section div.text {
-	position: absolute;
+	/*position: absolute;*/
 	opacity: 0;
     top: 2.4vh;
 	right: -25.9%;
