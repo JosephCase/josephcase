@@ -164,15 +164,30 @@ section .image img {
     margin: auto;
     display: block;
     box-shadow: 0 0 10px #5a5a5a;
+    opacity: 0.5;
+}
+section .image h1 {
+	position: absolute;
+	bottom: 0;
+	left: 10%;
+	font-size: 38px;
+	padding: 30px;
+	background-color: rgba(0,0,0,0.6);
+	color: white;
+	opacity: 1;
+	transition: opacity 0.5s;
 }
 section.active .image {
     left: 1.2%;
-    opacity: 0.5;
 	transition-delay: 0.2s;
+	opacity: 1;
 }
 
-section.active .image:hover {
+section.active .image:hover img {
 	opacity: 0.8;
+}
+section.active .image:hover h1 {
+	opacity: 0;
 }
 
 section.classic-collection .image {	
