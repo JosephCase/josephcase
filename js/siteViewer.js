@@ -17,7 +17,7 @@ function SiteViewer(element) {
 	}
 
 	function moveImage(mouse_Y) {
-		_element.stop(true);
+		// _element.stop(true);
 		// if (mouse_Y > 0) {
 			var scrollPosition = imgHeight * (mouse_Y  / _holderHeight);
 			// console.log(imgHeight * ((mouse_Y - 0.5 * _holderHeight) / (0.5 * _holderHeight)));
@@ -29,8 +29,8 @@ function SiteViewer(element) {
 		moveImage(e.pageY - _image_startingY);
 	});
 
-	$(_element).on("mouseleave", function(e) {
-		console.log("trigger?");
-		_siteImage.animate({ top: '0' }, 1000);
-	})
+	// $(_element).on("mouseleave", function(e) {
+	// 	console.log("trigger?");
+	// 	_siteImage.animate({ top: '0' }, 1000);
+	// })
 }
