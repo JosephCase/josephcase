@@ -41,7 +41,6 @@ function Page() {
 			$('section.active').removeClass("active");
 			$('#' + section.getAttribute('data-section')).addClass("active");
 		 	$(section).addClass("active");
-			console.log($('#' + section.getAttribute('data-section')).children(".image"));
 			activeSiteScroll($('#' + section.getAttribute('data-section')).children(".image"));
 		}
 
