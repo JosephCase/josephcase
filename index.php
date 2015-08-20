@@ -7,15 +7,27 @@
     <body>
         <h1>Image Resizer</h1>
         <?php 
-            $files = glob('images/*_o.jpg');
-            if (count($files) > 0) {
 
-                foreach($files as $file) {
-                    echo "<img src='".$file."' />";
-                    echo resizeImage($file, 800, "_l");
-                    echo resizeImage($file, 500, "_m");
-                    echo resizeImage($file, 300, "_s");
-                }
+
+            function resizeImages ($dir) {
+                $files = glob($dir.'/*_o.jpg');                
+                $dirs = glob($dir."/*", GLOB_ONLYDIR);
+                if (count($files) > 0) {
+
+                    foreach($files as $file) {
+                        echo "<img src='".$file."' />";
+                        echo resizeImage($file, 800, "_l");
+                        echo resizeImage($file, 500, "_m");
+                        echo resizeImage($file, 300, "_s");
+                    }
+                } 
+                if (count($dirs) > 0) {
+                    // echo count($dirs) . " - ";
+                    foreach($dirs as $sub_dir) {
+                        // echo $sub_dir . "</br>";
+                        resizeImages($sub_dir);
+                    }
+                }            
             }
             function resizeImage($file, $newWidth, $extension) {
                 $image = @imagecreatefromjpeg($file);
@@ -35,9 +47,9 @@
                     }
 
                     return "<img src='".$new_file."' />";
-                }
-                
+                }                
             }
+            resizeImages("images");
         ?>
     </body>
 </html>
