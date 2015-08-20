@@ -53,9 +53,10 @@
             <!-- <iframe class="image" src="http://www.classic-collection.co.uk"></iframe> -->
             <!-- <div class="image">
                 <a href="http://www.classic-collection.co.uk" target="_blank"></a>
+                href="http://www.classic-collection.co.uk"
             </div> -->
-            <a class="image" href="http://www.classic-collection.co.uk" target="_blank">
-                <img src="img/cc.jpg" />
+            <a class="image" target="_blank">
+                <img src="img/cc.jpg" draggable="false" />
                 <h1>Classic Collection</h1>
             </a>
             <div class="text">
@@ -66,17 +67,21 @@
                     <h5>XSLT</h5>
                     <h5>CSS</h5>
                 </div>
-                <p>Took the lead in the delivery of a new client website.</p>
+                <p>Took the lead in the delivery of a brand new website for Classic Collection Holidays. Determined project architecture, planned work to ensure completion to the deadline and allocated to and assited colleagues with elements of projects.</p>
                 <ul>
-                    <li>All content CMS controllable including page architecture.</li>
-                    <li>Reads from "Big Data" table with pre-processed XML for faster page loads.</li>
-                    <li>Uses XSLT XML to display dynamic data.</li>
-                    <li>Created child and parent ancestoral search tool.</li>
-                    <li>Created custom resonive image viewer.</li>
-                    <li>Fully responsive with distinct desktop, tablet and mobile designs.</li>
+                    <li>Reads from complex bespoke CMS system. All content including some aspects of project architecture CMS controllable.</li>
+                    <li>CMS data preprocessed to XML and saved in "Big Data" table to ensure faster database queries.</li>
+                    <li>Project archtiecture controlled using XML page directory, allowing for inclusion and repetition of modules that couple directly with the pre-preocessed CMS "Big Data" table.</li>
+                    <li>Uses VB.net to read from the XML page directory, query the database, sever XML directy to the page and de-serialize into datasets for sorting, filtering and paginations.</li>
+                    <li>Makes the use of looksups to store 'static' data.</li>
+                    <li>Initial pageload XML content transformed by XSLT and displayed on the page. Subsequence content such as sorted, filetered, paginated content retrieved using AJAX and passed to the page as JSON.</li>
+                    <li>Fully responsive and cross-browser supporting including old browsers (IE7, 8)</li>
+                    <li>Custom, sophisticated client side JS solutions using combination of JavaScript and JQuery.</li>
+                    <li>Agent login module supporting secure login and account creation.</li>
+                    <li>Agent portal reads and writes to database directly and using custom XML interface. Agents able to view multiple datatypes in one rubust table.</li>
+                    <li>JS form validation with some use of Regex.</li>
                     <li>Catered for older browsers (IE7, 8)</li>
                 </ul>
-                <a href="http://www.classic-collection.co.uk" target="_blank">www.classic-collection.co.uk</a>
             </div>
         </section>
         <section id="artist-portfolio" class="artist-portfolio">
@@ -121,6 +126,7 @@
             A bright, well-rounded and enthusiastic Full-Stack Developer with 2 years experience. Relishes new challenges, learning through work and personal study and creating high quality, well coded applications. Understands the importance of writing ‘lean’, modularised and easy-to-maintain code.
         </h4>
     </div>
+    <footer></footer>
     <!-- <section id="giusy-pirrotta" class="giusy-pirrotta"></section>
     <section id="lowcostholidays"></section>
     <section id="ruby"></section>

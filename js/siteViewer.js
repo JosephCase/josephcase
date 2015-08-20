@@ -4,37 +4,65 @@ function SiteViewer(element) {
 		_holderHeight,
 		_siteImage,
 		_imgHeight,
-		_image_startingY;
+		_image_startingY,
+		scroll_timeout,
+		clickStart;
 
 	getDimensions();
 
 	function getDimensions() {
 		_holderHeight = _element.height();
 		_siteImage = _element.children("img");
-		imgHeight  = _siteImage.height();
+		_imgHeight  = _siteImage.height();
 		_image_startingY = _siteImage.offset().top;
 
 	}
 
 	function moveImage(mouse_Y) {
-		// _element.stop(true);
-		// if (mouse_Y > 0) {
-			var scrollPosition = 200 * (mouse_Y  / _holderHeight);
-			// console.log(imgHeight * ((mouse_Y - 0.5 * _holderHeight) / (0.5 * _holderHeight)));
-			_siteImage.css({ top: -scrollPosition + 'px' });
-		// }
+		console.log("GO");
+		var scrollPosition = _imgHeight * (mouse_Y  / _element.innerHeight());
+		$(_element).scrollTop(scrollPosition);
 	}
 
-	$(_siteImage).on("mousemove", function(e) {
-		moveImage(e.pageY - _image_startingY);
+	function moveImage_2(mouse_Y) {
+		$(_element).animate({ scrollTop: _imgHeight * (mouse_Y  / _element.innerHeight()) }, 500);
+	}
+
+	$(_element).on("mousedown", function(e) {		
+		$(_element).animate({ scrollTop: _imgHeight * ((e.pageY - _image_startingY)  / _element.innerHeight()) }, 500);
 	});
 
-	$(document).on("scroll", function() {
-		console.log($(document).offset());
+	$(window).on("mouseup", function() {
+		$(window).off("mousemove");
 	});
+
+	// $(_siteImage).on("mousemove", function(e) {
+	// 	moveImage(e.pageY - _image_startingY);
+	// });
+
+	// // $(window).on("scroll", function() {
+	// // 	console.log($(window).scrollTop());
+	// // 	$(_element).scrollTop($(window).scrollTop());
+	// // });
 
 	// $(_element).on("mouseleave", function(e) {
-	// 	console.log("trigger?");
-	// 	_siteImage.animate({ top: '0' }, 1000);
+	// 	$(_element).animate({ scrollTop: 0 });
 	// })
+
+
+	// $(window).on("scroll", function() {
+	// 	clearTimeout(scroll_timeout);
+	// 	$(_siteImage).off("mousemove");
+	// 	scroll_timeout = setTimeout(function() {
+	// 		$(_siteImage).on("mousemove", function(e) {
+	// 			moveImage(e.pageY - _image_startingY);
+	// 		});
+	// 	}, 500)
+	// })
+
+
+
+
+
+
 }

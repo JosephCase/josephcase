@@ -144,7 +144,7 @@ body.initial section {
 section .image {
 	opacity: 0;
 
-	padding-top: 10vh;
+	padding: 10vh 0;
     display: block;
     height: 50vh;
     overflow: hidden;
@@ -193,6 +193,7 @@ section.active .image {
     left: 1.2%;
 	transition-delay: 0.2s;
 	opacity: 1;
+	cursor: n-resize;
 }
 
 section.active .image:hover img {
@@ -234,6 +235,11 @@ section div.text {
    	transition: all 0.8s;
 }
 
+section div.text ul, section div.text p {
+	width: 45%;
+	float: left;
+}
+
 section div.langs {
 	margin-top: 40px;
 	overflow: auto;
@@ -256,6 +262,11 @@ section div.langs h5 {
 section.active div.text {
 	opacity: 1;
 	transition-delay: 0.2s;
+}
+
+footer {
+	height: 10vh;
+	background-color: #5a5a5a;
 }
 
 
