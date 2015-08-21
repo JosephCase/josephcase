@@ -36,13 +36,14 @@
                     // Get new dimensions
                     $ratio = imagesy($image) / imagesx($image);
                     $newHeight = $newWidth * $ratio;
-
+                    echo $newHeight . "</br>";
                     //Resize image
                     $resizedImage = imagecreatetruecolor($newWidth, $newHeight);
                     imagecopyresampled($resizedImage, $image, 0, 0, 0, 0, $newWidth, $newHeight, imagesx($image), imagesy($image));
 
                     $new_file = str_replace("_o", $extension, $file);
                     if (imagetypes() & IMG_JPG) {
+                        echo "Success?";
                         imagejpeg($resizedImage, $new_file, 100);
                     }
 
