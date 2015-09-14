@@ -1,122 +1,44 @@
-﻿<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
 <head>
-    <title>Joseph Case</title>
-
-    <!--Meta-->
-    <meta name="description" content="A portfolio of some of the work I have completed.">
-    <meta name="author" content="Joseph Case">
-
-    <!--Google Fonts-->
-    <link href='http://fonts.googleapis.com/css?family=Oxygen:700,400,300' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Josefin+Sans:400,600' rel='stylesheet' type='text/css'>
-
-    <!--CSS-->
-    <link rel="stylesheet" type="text/css" href="reset.css">
-    <link rel="stylesheet" type="text/css" href="style.css">
-
-    <!--JS-->
-    <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
-    <script type="text/javascript" src="js/SiteViewer.js"></script>
-    <script type="text/javascript" src="js/Page.js"></script>
-
+	<title>Joseph Case</title>
+	<link rel="stylesheet" type="text/css" href="reset.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
-<body class="initial preStart">
-    <div class="content">
-        <header>
-            <h2>joseph case</h2>
-            <div class="bubble lowcost" data-section="lowcost">
-                <img src="img/lch_bubble.png">
-                <h5>Lowcost Holidays</h5>
-            </div>
-            <div class="bubble adverts">
-                <img src="img/ad_bubble.png">
-                <h5>Adverts</h5>
-            </div>
-            <div class="bubble artist-portfolio" data-section="artist-portfolio">
-                <img src="img/artist_bubble.png">
-                <h5>Artist Portfolio</h5>
-            </div>
-            <div class="bubble classic-collection" data-section="classic-collection">
-                <img src="img/cc_bubble.png">
-                <h5>Classic Collection</h5>
-            </div>
-        </header>
-       <!--  <section id="statement" class="statement">
-            <h3>"A bright, well-rounded and enthusiastic Full-Stack Developer with 2 years experience. Relishes new challenges, learning through work and personal study and creating high quality, well coded applications. Understands the importance of writing 'lean', modularised and easy-to-maintain code."</h3>
-        </section> -->
-        <section id="classic-collection" class="classic-collection">
-            <!-- <iframe class="image" src="http://www.classic-collection.co.uk"></iframe> -->
-            <!-- <div class="image">
-                <a href="http://www.classic-collection.co.uk" target="_blank"></a>
-            </div> -->
-            <a class="image" href="http://www.classic-collection.co.uk" target="_blank">
-                <img src="img/cc.jpg" />
-            </a>
-            <div class="text">
-                <h1>Classic Collection</h1>
-                <p>Took the lead in the delivery of a new client website.</p>
-                <ul>
-                    <li>All content CMS controllable including page architecture.</li>
-                    <li>Reads from "Big Data" table with pre-processed XML for faster page loads.</li>
-                    <li>Uses XSLT XML to display dynamic data.</li>
-                    <li>Created child and parent ancestoral search tool.</li>
-                    <li>Created custom resonive image viewer.</li>
-                    <li>Fully responsive with distinct desktop, tablet and mobile designs.</li>
-                    <li>Catered for older browsers (IE7, 8)</li>
-                </ul>
-                <a href="http://www.classic-collection.co.uk" target="_blank">www.classic-collection.co.uk</a>
-            </div>
-        </section>
-        <section id="artist-portfolio" class="artist-portfolio">
-            <!-- <iframe class="image" src="http://www.josephcase.net/giusypirrotta"></iframe> -->
-            <a class="image" href="http://www.josephcase.net/giusypirrotta" target="_blank">
-                <img src="img/gp.jpg" />
-                <h1>Artist Portfolio</h1>
-            </a>
-            <div class="text">
-                <p>Visual artist portfolio site due to go live in July 2015.</p>
-                <ul>
-                    <li>Fully responsive.</li>
-                    <li>PHP pagebases for common pages.</li>
-                    <li>JS video controller and language selection functionality.</li>
-                    <li>Smart loading images.</li>
-                </ul>
-                <a href="http://www.josephcase.net/giusypirrotta" target="_blank">www.giusypirrotta.com</a>
-            </div>
-        </section>
-        <section id="lowcost" class="lowcost">
-            <!-- <iframe class="image" src="http://www.lowcostholidays.com"></iframe> -->
+<body>
+	<section class="overview">
+		<div class="content">
+			<div class="circle">
+				<div>
+					<h1>Artist Portfolio</h1>
+					<p>Individually delivered a brand new, fully responsive artist portfolio website. With image optimisation, embedded HTML5 videos and English-Italian language selector.</p>
+					<div class="lanuages">
+						<h5>PHP</h5>
+						<h5>JS</h5>
+						<h5>CSS</h5>
+					</div>
+				</div>
+			</div>
+			<div class="margin"></div>
+			<div class="device">
+				<div class="holder">
+					<img src="images/giusypirrotta.png">
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="detail">
+		<h2>Key Challenge: Image optimisation</h2>
+		<div class="demo"></div>
+		<div class="text">
+			<p>The main focus of this website was to display images demonstrating the artist&rsquo;s portfolio of work. It was important that these images were both good quality and also that they displayed correctly on viewports of different sizes.</p>
 
-            <a class="image" href="http://www.lowcostholidays.com" target="_blank">
-                <img src="img/lch.jpg" />
-            </a>
-            <!-- <div class="image">
-                <a href="http://www.lowcostholidays.com" target="_blank"></a>
-            </div> -->
-            <div class="text">
-                <h1>Lowcost Holidays</h1>
-                <p>Implemented new features, maintained site and fixed bugs.</p>
-                <ul>
-                    <li>Built basket as part of new booking summary page.</li>
-                    <li>Implemented functionality to redirect customers to their native instance of the website.</li>
-                    <li>Added Qubit Univeral Variable tracking to dynamic content pages.</li>
-                    <li>Catered for older browsers (IE7, 8)</li>
-                </ul>
-                <a href="http://www.lowcostholidays.com" target="_blank">www.lowcostholidays.com</a>
-            </div>
-        </section>
-        <h4 class="about">
-            A bright, well-rounded and enthusiastic Full-Stack Developer with 2 years experience. Relishes new challenges, learning through work and personal study and creating high quality, well coded applications. Understands the importance of writing ‘lean’, modularised and easy-to-maintain code.
-        </h4>
-    </div>
-    <!-- <section id="giusy-pirrotta" class="giusy-pirrotta"></section>
-    <section id="lowcostholidays"></section>
-    <section id="ruby"></section>
-    <section id="bluequest"></section> -->
+			<p>To ensure the all images were good quality on all devices and that page loads times were kept to a minimum I decided to optimise the images so that each would be available in 3 different sizes and then let the browser choose which source image to use, dependant on the display size.</p>
+
+			<p>I decided rather than resizing each image manually using something Photoshop I would write a PHP script to do it for me, this would allow me to resize all images in one go, as well as any new images being added to the site. I wrote a php script (imageResizer.php), which loops recursively through the directory structure creating copies of the original images in 3 different sizes using the GD??. I then dynamically set a data-src tag which references each original image and then used Javascript (images.js) to loop through each image on the page, check it&rsquo;s width (applying a factor of 2 for those devices with a pixel ratio of greater than or equal to 2) and then choose an appropriately sized image as the src.</p>
+
+			<p>The main issue I encountered whilst doing this was when downsizing an image by a factor of over 2, the resulting image would be noticeably more blurred than its original. After a bit of research and testing I found that I could greatly improve the appearance of the image produced by applying a convolution matrix in order to sharpen it, resulting in a resized image that was not noticeably different to it&rsquo;s original.</p>
+		</div>
+	</section>
 </body>
 </html>
