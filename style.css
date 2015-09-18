@@ -10,31 +10,27 @@ section {
 
 
 section.overview {
-	background-color: orange;
+	background-color: #FFB42B;
 }
 
 .content {
-	position: relative;
-	width: 90%;
-	margin-left: 5%;
-	top: 5%;
-	height: 90%;
+	height: 100%;
 }
 
 
 
 .circle {
 	float: left;
-	margin: 0 5%;
-	width: 35%;
-	padding-top: 35%;
-	border-radius: 50%;
-	background-color: #fff;
-	position: relative;
-	top: 50%;
-	transform: translateY(-50%);
-	background-color: rgba(0,0,0,0.8);
-	color: #fff;
+    margin: 0 5%;
+    width: 30%;
+    padding-top: 30%;
+    border-radius: 50%;
+    position: relative;
+    top: 25%;
+    background-color: rgba(355,355,355,0.9);
+    color: black;    
+    box-shadow: inset 0px 2px 20px #999;
+    position: fixed;
 
 }
 
@@ -48,35 +44,39 @@ section.overview {
 
 .margin {
 	float: left;
-	height: 100%;
-	margin-left: 5%;
+	height: 90%;
 	width: 5%;
+	margin-top: 5%;
+	margin-left: 40%;
 	border-left: 4px solid rgba(0,0,0,0.2);
 	box-sizing: border-box;
 }
 
-.device {
+.browser {
 	float: left;
-	margin-left: 7.5%;
-	margin-top: 2.5%;
-	width: 30%;
-	height: 90%;
-	background-color: #fff;
-	border-radius: 20px;
-	box-sizing: border-box;
-	border: 1px solid #666;
+    margin-top: 2.5%;
+    margin-right: 5%;
+    width: 50%;
+    box-sizing: border-box;
+    box-shadow: 0px 2px 20px #BF884F;
 }
 
-.device div {
-	width: 90%;
-	height: 82%;
-	margin-left: 5%;
-	margin-top: 12.5%;
-	border: 1px solid #666;
-	overflow: hidden;
-	box-sizing: border-box;
+.browser>div {
+	width: 100%;
+	background-color: #e1e1e1;
+	height: 26px;
 }
 
-.device img {
+.browser .button {
+	width: 12px;
+	height: 12px;
+	border-radius: 6px;
+	margin-top: 7px;
+	margin-left: 8px;
+	float: left;
+	background-color: #999;
+}
+
+.browser img {
 	width: 100%;
 }
