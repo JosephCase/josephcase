@@ -43,19 +43,14 @@ h5 {
     font-weight: bold;
 }
 header {
-    position: absolute;
     opacity: 1;
-    width: 90%;
+    padding: 0 5%;
     /*width: 960px;*/
     height: 120px;
 	z-index: 10;
 	/*padding: 0 3.4%;*/
-	background-color: #ebebeb;
 	overflow: hidden;
     box-sizing: border-box;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
     transition: all 1s 0.6s, top 0.6s, opacity 2s 1s;
     background-color: #fff;
     
@@ -75,7 +70,7 @@ header div{
     float: right;
     height: 180px;
     width: 80px;
-    margin-left: 1.2%;
+    margin-left: 16px;
     cursor: pointer;
     top: 0;
     transition: top 0.5s;
@@ -127,16 +122,17 @@ h4.about.show {
 }
 section {
 	overflow: visible;
-	z-index: 1;
+	z-index: 100;
    	width: 100%;
-    position: absolute;
-   	top: 120px;
-   	left: 0;
    	transition: opacity 0s;
 	transition-delay: 1s;
+	position: 	absolute;
+	top: 120px;
 }
 section.active {
-	z-index: 2;
+	z-index: 200;
+	position: 	relative;	
+	top: 	0;
 }
 body.initial section {
 	opacity: 0;
@@ -168,7 +164,7 @@ section .image img {
     width: 960px;
     transition: opacity 0.5s;
 }
-section .image h1 {
+section .image .detail {
 
 	pointer-events: none;
 	position: absolute;
@@ -184,29 +180,48 @@ section .image h1 {
 	opacity: 1;
 	transition: all 0.5s;
 	text-align: center;
-	height: 50vh;
-	width: 50vh;
-	line-height: 50vh;
+	height: 400px;
+	width: 400px;
+	padding: 30px;
+	box-sizing: border-box;
 	transition-delay: 0.2s;
 }
+
+section .image .detail div {
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+section .image h2 {
+
+	font-size: 30px;
+}
+section .image p {
+	margin-top: 30px;
+	font-size: 18px;
+	font-style: italic;
+}
+
+
 section.active .image {
     left: 1.2%;
 	transition-delay: 0.2s;
 	opacity: 1;
-	cursor: n-resize;
+	cursor: pointer;
 }
 
 section.active .image:hover img {
-	opacity: 0.8;
+	/*opacity: 1;*/
 }
-section.active .image h1 {
+section.active .image .detail {
 
 	transform: translateX(-50%) translateY(-50%) scale(1);
 	
 }
-section.active .image:hover h1 {
-	opacity: 0;
-	transform: translateX(-50%) translateY(-50%) scale(0);
+section.active .image:hover .detail {
+	/*opacity: 0;*/
+	/*transform: translateX(-50%) translateY(-50%) scale(0);*/
 	transition-delay: 0s;
 }
 
@@ -227,12 +242,14 @@ section .image a{
 }
 section div.text {
 	/*position: absolute;*/
+	padding: 	0 5%;
 	opacity: 0;
   	font-size: 14px;
     font-weight: 600;
-    
+    height: 	600px;
 	box-sizing: border-box;
    	transition: all 0.8s;
+   	overflow: 	hidden;	
 }
 
 section div.text ul, section div.text p {
@@ -266,7 +283,7 @@ section.active div.text {
 
 footer {
 	height: 10vh;
-	background-color: #5a5a5a;
+	background-color: #1A1919;
 }
 
 

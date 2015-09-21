@@ -28,22 +28,24 @@ function SiteViewer(element) {
 		$(_element).animate({ scrollTop: _imgHeight * (mouse_Y  / _element.innerHeight()) }, 500);
 	}
 
-	$(_element).on("mousedown", function(e) {		
-		$(_element).animate({ scrollTop: _imgHeight * ((e.pageY - _image_startingY)  / _element.innerHeight()) }, 500);
-	});
+	// $(_element).on("mousedown", function(e) {		
+	// 	$(_element).animate({ scrollTop: _imgHeight * ((e.pageY - _image_startingY)  / _element.innerHeight()) }, 500);
+	// });
 
-	$(window).on("mouseup", function() {
-		$(window).off("mousemove");
-	});
+	// $(window).on("mouseup", function() {
+	// 	$(window).off("mousemove");
+	// });
 
 	// $(_siteImage).on("mousemove", function(e) {
 	// 	moveImage(e.pageY - _image_startingY);
 	// });
 
-	// // $(window).on("scroll", function() {
-	// // 	console.log($(window).scrollTop());
-	// // 	$(_element).scrollTop($(window).scrollTop());
-	// // });
+	$(window).on("scroll", function() {
+		// if($(window).scrollTop() > 120) {
+			console.log($(window).scrollTop());
+			$(_element).scrollTop($(window).scrollTop());			
+		// }
+	});
 
 	// $(_element).on("mouseleave", function(e) {
 	// 	$(_element).animate({ scrollTop: 0 });
