@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Another One</title>
+	<style type="text/css">
+	body {
+		margin: 0;
+	}
+	section {
+		height: 100vh;
+	}
+	section div {
+		height: 100%;
+	}
+	.red {
+		background-color: red;
+	}
+
+	.yellow {
+		background-color: yellow;
+	}
+	</style>
+	<script type="text/javascript">
+	document.addEventListener("DOMContentLoaded", function(event) {
+
+		var sections = document.getElementsByTagName("div");
+
+		var i = 1;
+
+		window.onscroll = function() {
+			console.log(window.pageYOffset);
+			sections[i].style.transform = "translateY(" + window.pageYOffset + "px)";
+		};
+
+	});
+	</script>
+</head>
+<body>
+	<section class="red">
+		<div></div>
+	</section>
+	<section class="yellow">
+		<div></div>
+	</section>
+</body>
+</html>

@@ -1,13 +1,117 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <head>
-    <title>Joseph Case</title>
+	<title>YES</title>
+	<style type="text/css">
+	* {
+		margin: 0;
+		padding: 0;
+	}
+	body {
+		margin: 0;
+		/*background-image: url("demo.png");*/
+		font-family: "Century Gothic";
+		background-color: #ffa600;
+	}
+	header {
+		height: 120px;
+		padding: 0 65px;
+		position: fixed;
+		width: 100%;
+		box-sizing: border-box;
+		top: 0;
+	}
+	h1 {
+		float: left;
+		line-height: 120px;
+		font-size: 30px;
+		font-weight: bold;
+		margin: 0;
+		font-weight: 500;
+	}
+	h3 {
+		font-size: 22px;
+		margin: 0;
+	}
+	p {
+		font-size: 18px;
+	}
 
-    <!--Meta-->
-    <meta name="description" content="A portfolio of some of the work I have completed.">
-    <meta name="author" content="Joseph Case">
+
+	header h3 {
+		margin-right: 41px;
+		line-height: 120px;
+		float: right;
+		font-weight: normal;
+	}
+	header h3:nth-of-type(2) {
+		margin-right: 78px;
+	}
+	header h3 span {
+		color: #cc8500;
+		transition: color 0.5s;
+		cursor: pointer;
+	}
+	header h3 span:hover {
+		color: #fff6e5;
+	}
+
+	.circle {
+		height: 86px;
+		width: 86px;
+		margin: 17px 0 17px 17px;
+		border-radius: 50px;
+		float: right;
+		background-color: #fff6e5;
+	}
+	section {
+		height: 100vh;
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+	.text {
+		padding-top: 110px;
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%) translateX(-555px);
+		left: 50%;
+		margin-right: 112px;
+		width: 433px;
+		color: #fff6e5;
+	}
+	.text h2 {
+		font-size: 30px;
+		font-weight: normal;
+	}
+	.text p {
+		margin-top: 56px;
+	}
+	.text p.langs {
+		font-weight: bold;
+		margin-top: 38px;
+	}
+	</style>
 </head>
 <body>
-	<img src="demo.png">
+	<header>
+		<h1>JOSEPH CASE</h1>
+		<div class="circle lc"></div>
+		<div class="circle gp"></div>
+		<div class="circle cc"></div>
+		<h3><span>Molk:</span></h3>
+		<h3><span>Skilit</span></h3>
+	</header>
+	<section>
+		<div class="text">
+			<h2>Something Here</h2>
+			<p>
+				Usability tests always produce useful results. Either you'll be pointed to the problems you have or you'll be pointed to the absence of major design flaws which is in both cases a useful insight for your project.
+			</p>
+			<p class="langs">ABC, Scc, Helm</p>
+		</div>
+		<div class="margin"></div>
+		<div class="largeCircle"></div>
+	</section>
 </body>
 </html>
