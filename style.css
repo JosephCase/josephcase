@@ -1,0 +1,109 @@
+
+
+
+/*RESET ^*/
+
+html, body {
+	font-family: Arial;
+	margin: 0;
+	padding: 0;
+}
+
+
+section	{
+	height: 100vh;
+}
+
+
+section:first-of-type {
+	background-color: #f77648;
+	border-bottom: 50px solid #212121;
+	box-sizing: border-box;
+}
+
+h1.myName {
+	position: absolute;
+	width: 100%;
+	top: 50%;
+	text-align: center;
+	transform: translateY(-50%);
+	color: white;
+	font-size: 80px;
+	font-weight: normal;
+	margin: 0;
+	vertical-align: middle;
+}
+
+h1.myName:after {
+	content:  '{';
+	font-size: 200px;
+	line-height: 80px;
+	margin-left: 50px;
+}
+
+section > div {
+	position: relative;
+	box-sizing: border-box;
+	width: 50%;
+	float: left;
+	overflow: hidden;
+}
+
+
+/*LHS*/
+section .detail {
+	/*position: fixed;*/
+	height: 100%;
+	background-color: #FF8DA1;
+	color: #fff;
+}
+
+section h2 {
+	font-size: 72px;
+	margin-top: 0;
+	margin-bottom: 20px;
+}
+
+section .detail .info {
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+	text-align: center;
+}
+
+
+section .detail  .info .langs > span {
+	line-height: 40px;
+	margin: 3px;
+	/*background-color: #fff;*/
+	border: 2px solid #fff;
+	/*color: #f77648;*/
+	font-weight: bold;
+	border-radius: 5px;
+	padding: 5px;
+	font-size: 12px;
+	width: 60px
+}
+
+
+/*RHS*/
+section .content {
+	width: 50%;
+	padding: 100px 7%;
+	font-size: 20px;
+}
+
+#classic-collection .detail {
+	background-color: #0053a0;
+}
+
+#adBuilder .detail {
+	background-color: #b92025;
+}
+
+
+img {
+	position: absolute;
+	height: 100%;
+	opacity: 0.1;
+}
