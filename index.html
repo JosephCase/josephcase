@@ -2,13 +2,23 @@
 <html>
 <head>
 	<title>Joseph Case: Portfolio</title>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="app.js"></script>
 </head>
 <body>
 	<section>
 		<h1 class='myName'>Joseph Case</h1>
 	</section>
 	<section>
+		<div class='content'>
+			<h3>Artist portfolio website with custom made CMS, allowing the user to create and edit pages, and upload text, image and video content.</h3>
+			<!-- <img src="http://www.giusypirrotta.com/media_content/work/reversed_light/images/img-05_l.jpg"> -->
+			<p>A project developed in my own time, it consists of an independant website written in PHP and a Node.js CMS. It has a heirachal structure of pages and content stored in a mySQL database.</p>
+			<p>The key aim of the website was to provide high quality images across multiple devices, while still achieving fast load times. In order to achieve this the CMS allows the user to upload images which are then saved at multiple sizes using Imagemagick and the Imagemagick wrapper module. The website is then able to choose which image size to serve based on the display width of the image.</p>
+			<p>The Node CMS uses the Express framework to route HTTP requests, serve static content and handle user session. Multiple page edits can be made at once and the request is sent to the server as a JSON list of instructions, which are then executed asynchronously, updating the mySQL database and then performing an action on any associated files. The user is able to upload images as mentioned, but also video (which is optimised and saved in mp4 and webm formats using ffmpeg) and text. The user has control over the order and size of all content as well as the language it should appear in.</p>
+			<p>The website itself uses the Mod_rewrite engine to route all requests to a single PHP script, which serves content based on the url request using a single page class. The CMS inputted text is formatted using Markdown and the website has a simple session language toggle which controls which content is displayed based on its language setting in the CMS.</p>
+		</div>		
 		<div class='detail'>
 
 			<img src="http://www.giusypirrotta.com/media_content/work/reversed_light/images/img-05_l.jpg">
@@ -25,19 +35,12 @@
 					<span>Swig</span>
 				</p>
 				<p class='links'>
-					<a href="http://staging.giusypirrotta.com">Website</a>
-					<a href="http://staging.giusypirrotta.com">github; frontend</a>
-					<a href="http://staging.giusypirrotta.com">github: backend</a>
+					<a href="http://staging.giusypirrotta.com" target='_blank'><img src="http://www.freeiconspng.com/uploads/black-www-icon-17.png"><span>Website</span></a>
+					<a href="https://github.com/JosephCase/giusypirrotta" target='_blank'><img src="GitHub-Mark-32px"><span>Website</span></a>
+					<a href="https://github.com/JosephCase/gp-cms" target='_blank'><img src="GitHub-Mark-32px"><span>CMS</span></a>
 				</p>
 			</div>		
 		</div>
-		<div class='content'>
-			<h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h3>
-			<!-- <img src="http://www.giusypirrotta.com/media_content/work/reversed_light/images/img-05_l.jpg"> -->
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-		</div>		
 	</section>
 	<section id='classic-collection'>
 		<div class='content'>
@@ -68,6 +71,13 @@
 		</div>
 	</section>
 	<section id='adBuilder'>
+		<div class='content'>
+			<h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h3>
+			
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		</div>		
 		<div class='detail'>
 			<img src="http://redboxtalent.com/wp-content/uploads/2016/05/Tools-for-content-marketers-header-image-800x600.jpg">
 			<div class='info'>
@@ -80,13 +90,6 @@
 				</p>
 			</div>			
 		</div>
-		<div class='content'>
-			<h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h3>
-			
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-		</div>		
 	</section>
 </body>
 </html>
