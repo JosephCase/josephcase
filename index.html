@@ -4,26 +4,46 @@
 	<title>Joseph Case: Portfolio</title>
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="particles.js"></script>
 	<script src="app.js"></script>
 </head>
 <body>
 	<section>
-		<h1 class='myName'>Joseph Case</h1>
+    	<canvas width="2000" height="1000" id='particles'></canvas>
+		<div class='center'>			
+			<h1 class='myName'>Joseph Case</h1>
+			<p class='aboutMe'>A software engineer with over 3 years professional experience who loves writing lean, well structured code and creating </p>
+		</div>
 	</section>
-	<section>
+	<section id='artistPortfolio'>
 		<div class='content'>
-			<h3>Artist portfolio website with custom made CMS, allowing the user to create and edit pages, and upload text, image and video content.</h3>
-			<!-- <img src="http://www.giusypirrotta.com/media_content/work/reversed_light/images/img-05_l.jpg"> -->
-			<p>A project developed in my own time, it consists of an independant website written in PHP and a Node.js CMS. It has a heirachal structure of pages and content stored in a mySQL database.</p>
-			<p>The key aim of the website was to provide high quality images across multiple devices, while still achieving fast load times. In order to achieve this the CMS allows the user to upload images which are then saved at multiple sizes using Imagemagick and the Imagemagick wrapper module. The website is then able to choose which image size to serve based on the display width of the image.</p>
-			<p>The Node CMS uses the Express framework to route HTTP requests, serve static content and handle user session. Multiple page edits can be made at once and the request is sent to the server as a JSON list of instructions, which are then executed asynchronously, updating the mySQL database and then performing an action on any associated files. The user is able to upload images as mentioned, but also video (which is optimised and saved in mp4 and webm formats using ffmpeg) and text. The user has control over the order and size of all content as well as the language it should appear in.</p>
-			<p>The website itself uses the Mod_rewrite engine to route all requests to a single PHP script, which serves content based on the url request using a single page class. The CMS inputted text is formatted using Markdown and the website has a simple session language toggle which controls which content is displayed based on its language setting in the CMS.</p>
+			<h3>A fully responsive artist portfolio website with a custom made CMS.</h3>
+			<p>A project developed in my spare time, it consists of a fully responsive portfolio website written in PHP (<a href="http://www.giusypirrotta.com"  target='_blank'>www.giusypirrotta.com</a>) and a Node.js CMS. The CMS enables to user to create and edit pages, text, image and video content, by writing to the mySQL database and saving associated files. The website then reads from the database, serving the content directly or using it to reference a saved file.</p>
+			
+
+			<h4>Key feature - Image optimisation</h4>
+
+			<p>It was important that the website could display high quality images at multiple sizes and across multiple devices, while still achieving fast load times. In order to achieve this the CMS converts uploaded images to various file sizes using Imagemagick cli. The website itself is then chooses the most appropriate image size to serve, based on the physical display width of the image on the page.</p>
+
+
+			<h4>The website</h4>
+
+			<p>The website uses the Mod_rewrite engine to route all requests to a single PHP script, which serves the relevant content from the mySQL database based on the HTTP request. The CMS inputted text is formatted using Markdown and the website has a simple session language toggle, which controls which content is displayed based on its language setting in the CMS.</p>
+
+
+			<h4>The CMS</h4>
+
+			<p>The CMS uses the Node Express framework to route HTTP requests, serve static content and handle user session. The user is able to create new and edit existing pages, and within a page create, update and delete image, video and text content.</p>
+			<video controls loop>
+				<source src='gp.webm' type='video/webm' />
+        	</video>
+			<p>When editing a page the user it given graphical representation of the changes due to take place and can then save those changes once they are happy. When a page is saved the multiple changes are submitted to the server as a JSON set of instruction objects, with and associated files uploaded using FormData object. On the server the instructions are then processed asynchronously, updating the database and creating, updating or deleting any relevant files.</p>
 		</div>		
 		<div class='detail'>
 
 			<img src="http://www.giusypirrotta.com/media_content/work/reversed_light/images/img-05_l.jpg">
 			<!-- <img src="http://www.giusypirrotta.com/media_content/work/the_quality_of_scale/images/qos_05_l.jpg"> -->
-			<div class='info'>
+			<div class='info center'>
 				<h2>Artist Portfolio</h2>
 				<p class='langs'>
 					<span>Node.js</span>
@@ -44,15 +64,35 @@
 	</section>
 	<section id='classic-collection'>
 		<div class='content'>
-			<h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h3>
+			<h3>A responsive travel website with pre-compiled CMS data for faster load times.</h3>
 			
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			<p>During my time at Intuitive (<a href='http://www.intuitivesystems.com/' target='_blank'>www.intuitivesystems.com</a>) I took the lead in the development of a new client website for Classic Collection (<a href='http://www.classic-collection.co.uk' target='_blank'>www.classic-collection.co.uk</a>). The website reads for a SQL "Big C" data table which stores pre-processed CMS information as XML for fast read times. The website CMS offers the client a high level of customisability including the ability to override the natural data hierarchy.</p>
+
+			<h4>Application Structure</h4>
+			<p>The website structure is based on an XML map which defines page types and the 'widgets' that should appear on them. A 'widget' in this context is VB.Net class which performs some function on the page, usually displaying a section of content such as an image gallery or a Google maps feature.</p>
+			<p>Generally speaking each widget will correspond to a row within the "Big C" data table, if it is page specific identified by the widget type, page type and page id. The "Big C" table contains pre-compiled XML representing the CMS data for the unique instance of a widget on a page. The widget class will pull the data from the "Big C" table and initially present it on page using XSLT. For widgets where not all the data is displayed immediately or were greater level of functionality is required (for example a results page with filters and pagination) the "Big C" XML is parsed and stored within the instance of the widget class, so that it can be manipulated and presented in response to later AJAX calls.</p>
+
+			<h4>CMS Control</h4>
+			<p>The CMS is built within the companies iVector CMS structure, where each page or section is represented by a CMS page and a corresponding CMS table. These can be bespoke CMS pages, or pages based on the existing data in the iVector core database, for example a CMS page which allows the client to customise Hotel pages. At a set interval a stored SQL script will pull the required information for each widget from CMS and core tables and write it as XML to the "Big C" data table.</p>
+			<p>The CMS also gives the client the ability to override the data from the iVector core tables and change the natural hierarchy. The central content for the website is based on a Country > Region > Resort > Hotel hierarchy and the CMS gives the client the ability to show and hide Countries, Region, Resorts and Hotels, but also present Countries, Regions and Resorts interchangeably, for example changing a particular country (somewhere like Monaco) to a hierarchy of Country -> Hotel, so that while it will appear as a country, it will behave as a Resort (i.e. the parent of Hotels).</p>
+			<img src="morocco.JPG">
+			<img src="monaco.JPG">	
+			<h4>Other website features</h4>
+			<ul>
+				<li>Cross device responsive design.</li>
+				<li>Autocomplete search tool able to search Countries, Regions, Resorts and Hotels.</li>
+				<li>Paginated hotel results pages with filters.</li>
+				<li>Google maps with markers and custom info windows.</li>
+				<li>Responsive image carousels.</li>
+				<li>Agent and customer login areas, with ability to view and edit bookings.</li>
+				<li>User forms (e.g. Request a Quote page).</li>
+				<li>Recently viewed hotels cache.</li>
+				<li>Page redirects.</li>
+			</ul>
 		</div>		
 		<div class='detail'>
 			<img src="http://www.landmarklondon.co.uk/uploads/files/Executive-Room.jpg">
-			<div class='info'>
+			<div class='info center'>
 				<h2>Classic Collection</h2>
 				<p class='langs'>
 					<span>VB.Net</span>
@@ -63,24 +103,39 @@
 					<span>XML</span>
 				</p>
 				<p class='links'>
-					<a href="http://staging.giusypirrotta.com">Website</a>
-					<a href="http://staging.giusypirrotta.com">github; frontend</a>
-					<a href="http://staging.giusypirrotta.com">github: backend</a>
+					<a href="http://staging.giusypirrotta.com" target='_blank'><img src="http://www.freeiconspng.com/uploads/black-www-icon-17.png"><span>Website</span></a>
 				</p>
 			</div>			
 		</div>
 	</section>
 	<section id='adBuilder'>
 		<div class='content'>
-			<h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h3>
+			<h3>A development tool that converts layered psds into fully responsive cross device ad units.</h3>
 			
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			<p>Developed during my time at Bluequest <a href="http://www.bluequest.co.uk" target='_blank'>(www.bluequest.co.uk)</a>, this ad building tool developed in PHP allows our developers to create and edit the layout of cross device, fully responsive advertising unit, by simply dragging and dropping psds or images onto a work area - greatly improving our productivity.</p>
+			<p>Once the ad has been created the user can edit its layout using the AdBuilders editing tools and then has the freedom to develop bespoke features, such as navigation, animations and canvas features using custom code.</p>
+
+			<h4>Core concept</h4>
+			<p>The ad is represented by a hierarchical PHP class structure Ad > View > Element. The application processes each layer of an uploaded psd, saving the image and storing it's size, position and reference to its image as an Element object. The Ad object then writes a HTML and CSS file representing the PSD in HTML form and saves the Ad object as JSON, so that it can be recalled and edited later.</p>
+
+			<h4>Cross-device support</h4>
+			<p>The AdBuilder supports multiple device designs within a single unit through use of the View class. PSDs can be uploaded for each 'view' (e.g. Desktop, Tablet and Mobile) and our independent Scale_Controller.js module controls which view to show and the corresponding images to load based on the browser window size.</p>
+
+			<h4>Editing</h4>
+			<p>The AdBuilder features a set of editing tools which enable the user to add content and edit the layout of an ad that it has created. It does this by re-instantiating the Ad object from it's saved JSON and then updating it based on the changes made, before rewriting the HTML, CSS and re-saving itself  as JSON.</p>
+			<p>The editing tools allows the user to;</p>
+			<ul>
+				<li>Create new Elements by uploading images or psds.</li>
+				<li>Change Element anchor positions.</li>
+				<li>Control Element scale behaviour.</li>
+				<li>Group/ungroup Elements (the PHP Element objects can be nested).</li>
+				<li>Delete Elements.</li>
+			</ul>
+			<p>A demo showing the creation of a basic ad layout can be seen below. An example of a finished cross-device ad, with bespoke navigation and HTML5 Canvas code can be seen here - <a href="">link goes here</a></p>
 		</div>		
 		<div class='detail'>
 			<img src="http://redboxtalent.com/wp-content/uploads/2016/05/Tools-for-content-marketers-header-image-800x600.jpg">
-			<div class='info'>
+			<div class='info center'>
 				<h2>AdBuilder</h2>
 				<p class='langs'>
 					<span>PHP</span>
