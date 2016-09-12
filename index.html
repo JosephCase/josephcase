@@ -3,17 +3,35 @@
 <head>
 	<title>Joseph Case: Portfolio</title>
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="style.css">
-	<script src="particles.js"></script>
-	<script src="app.js"></script>
+	<link rel="stylesheet" type="text/css" href="style/core.css">
+	<script src="js/jquery-1.12.3.min.js"></script>
+	<script src="js/particles.js"></script>
+	<script src="js/app.js"></script>
 </head>
 <body>
 	<section>
     	<canvas width="2000" height="1000" id='particles'></canvas>
 		<div class='center'>			
 			<h1 class='myName'>Joseph Case</h1>
-			<p class='aboutMe'>A software engineer with over 3 years professional experience who loves writing lean, well structured code and creating </p>
+			<p class='aboutMe'>A software engineer with over 3 years professional experience who loves writing lean, well structured code and creating cool stuff.</p>
 		</div>
+		<!-- <navigation>
+			Portfolio:	{
+			<a href="#artistPortfolio">Artist Portfolio</a>
+			<a href="#classic-collection">Classic Collection</a>
+			<a href="#adBuilder">AdBuilder</a>
+			}
+		</navigation> -->
+		<navigation>
+			{
+			<a href="#artistPortfolio">Artist Portfolio</a>
+			<a href="#classic-collection">Classic Collection</a>
+			<a href="#adBuilder">AdBuilder</a>
+			}
+		</navigation>
+		<a href="#artistPortfolio">
+			<img id='down' src="img/down.png">			
+		</a>
 	</section>
 	<section id='artistPortfolio'>
 		<div class='content'>
@@ -35,14 +53,14 @@
 
 			<p>The CMS uses the Node Express framework to route HTTP requests, serve static content and handle user session. The user is able to create new and edit existing pages, and within a page create, update and delete image, video and text content.</p>
 			<video controls loop>
-				<source src='gp.webm' type='video/webm' />
+				<source src='video/gp.webm' type='video/webm' />
+				<source src='video/gp.mp4' type='video/mp4' />
         	</video>
 			<p>When editing a page the user it given graphical representation of the changes due to take place and can then save those changes once they are happy. When a page is saved the multiple changes are submitted to the server as a JSON set of instruction objects, with and associated files uploaded using FormData object. On the server the instructions are then processed asynchronously, updating the database and creating, updating or deleting any relevant files.</p>
 		</div>		
 		<div class='detail'>
 
-			<img src="http://www.giusypirrotta.com/media_content/work/reversed_light/images/img-05_l.jpg">
-			<!-- <img src="http://www.giusypirrotta.com/media_content/work/the_quality_of_scale/images/qos_05_l.jpg"> -->
+			<img src="img/gp.jpg">
 			<div class='info center'>
 				<h2>Artist Portfolio</h2>
 				<p class='langs'>
@@ -55,9 +73,9 @@
 					<span>Swig</span>
 				</p>
 				<p class='links'>
-					<a href="http://staging.giusypirrotta.com" target='_blank'><img src="http://www.freeiconspng.com/uploads/black-www-icon-17.png"><span>Website</span></a>
-					<a href="https://github.com/JosephCase/giusypirrotta" target='_blank'><img src="GitHub-Mark-32px"><span>Website</span></a>
-					<a href="https://github.com/JosephCase/gp-cms" target='_blank'><img src="GitHub-Mark-32px"><span>CMS</span></a>
+					<a href="http://staging.giusypirrotta.com" target='_blank'>www.giusypirrotta.com</a>
+					<!-- <a href="https://github.com/JosephCase/giusypirrotta" target='_blank'><img src="GitHub-Mark-32px"><span>Website</span></a>
+					<a href="https://github.com/JosephCase/gp-cms" target='_blank'><img src="GitHub-Mark-32px"><span>CMS</span></a> -->
 				</p>
 			</div>		
 		</div>
@@ -75,8 +93,8 @@
 			<h4>CMS Control</h4>
 			<p>The CMS is built within the companies iVector CMS structure, where each page or section is represented by a CMS page and a corresponding CMS table. These can be bespoke CMS pages, or pages based on the existing data in the iVector core database, for example a CMS page which allows the client to customise Hotel pages. At a set interval a stored SQL script will pull the required information for each widget from CMS and core tables and write it as XML to the "Big C" data table.</p>
 			<p>The CMS also gives the client the ability to override the data from the iVector core tables and change the natural hierarchy. The central content for the website is based on a Country > Region > Resort > Hotel hierarchy and the CMS gives the client the ability to show and hide Countries, Region, Resorts and Hotels, but also present Countries, Regions and Resorts interchangeably, for example changing a particular country (somewhere like Monaco) to a hierarchy of Country -> Hotel, so that while it will appear as a country, it will behave as a Resort (i.e. the parent of Hotels).</p>
-			<img src="morocco.JPG">
-			<img src="monaco.JPG">	
+			<img src="img/morocco.jpg">
+			<img src="img/monaco.jpg">	
 			<h4>Other website features</h4>
 			<ul>
 				<li>Cross device responsive design.</li>
@@ -91,7 +109,7 @@
 			</ul>
 		</div>		
 		<div class='detail'>
-			<img src="http://www.landmarklondon.co.uk/uploads/files/Executive-Room.jpg">
+			<img src="img/cc.jpg">
 			<div class='info center'>
 				<h2>Classic Collection</h2>
 				<p class='langs'>
@@ -103,7 +121,7 @@
 					<span>XML</span>
 				</p>
 				<p class='links'>
-					<a href="http://staging.giusypirrotta.com" target='_blank'><img src="http://www.freeiconspng.com/uploads/black-www-icon-17.png"><span>Website</span></a>
+					<a href="http://www.classic-collection.co.uk" target='_blank'><span>www.classic-collection.co.uk</span></a>
 				</p>
 			</div>			
 		</div>
@@ -113,7 +131,7 @@
 			<h3>A development tool that converts layered psds into fully responsive cross device ad units.</h3>
 			
 			<p>Developed during my time at Bluequest <a href="http://www.bluequest.co.uk" target='_blank'>(www.bluequest.co.uk)</a>, this ad building tool developed in PHP allows our developers to create and edit the layout of cross device, fully responsive advertising unit, by simply dragging and dropping psds or images onto a work area - greatly improving our productivity.</p>
-			<p>Once the ad has been created the user can edit its layout using the AdBuilders editing tools and then has the freedom to develop bespoke features, such as navigation, animations and canvas features using custom code.</p>
+			<p>Once the ad has been created the user can edit its layout using the AdBuilder's editing tools and then has the freedom to develop bespoke features, such as navigation, animations and canvas features using custom code.</p>
 
 			<h4>Core concept</h4>
 			<p>The ad is represented by a hierarchical PHP class structure Ad > View > Element. The application processes each layer of an uploaded psd, saving the image and storing it's size, position and reference to its image as an Element object. The Ad object then writes a HTML and CSS file representing the PSD in HTML form and saves the Ad object as JSON, so that it can be recalled and edited later.</p>
@@ -123,6 +141,10 @@
 
 			<h4>Editing</h4>
 			<p>The AdBuilder features a set of editing tools which enable the user to add content and edit the layout of an ad that it has created. It does this by re-instantiating the Ad object from it's saved JSON and then updating it based on the changes made, before rewriting the HTML, CSS and re-saving itself  as JSON.</p>
+			<video controls loop>
+				<source src='video/adBuilder.webm' type='video/webm' />
+				<source src='video/adBuilder.mp4' type='video/mp4' />
+        	</video>
 			<p>The editing tools allows the user to;</p>
 			<ul>
 				<li>Create new Elements by uploading images or psds.</li>
@@ -131,7 +153,6 @@
 				<li>Group/ungroup Elements (the PHP Element objects can be nested).</li>
 				<li>Delete Elements.</li>
 			</ul>
-			<p>A demo showing the creation of a basic ad layout can be seen below. An example of a finished cross-device ad, with bespoke navigation and HTML5 Canvas code can be seen here - <a href="">link goes here</a></p>
 		</div>		
 		<div class='detail'>
 			<img src="http://redboxtalent.com/wp-content/uploads/2016/05/Tools-for-content-marketers-header-image-800x600.jpg">
