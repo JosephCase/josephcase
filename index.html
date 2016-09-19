@@ -1,19 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta charset="utf-8"/>
 	<title>Joseph Case: Portfolio</title>
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="style/core.css">
+	<link rel="stylesheet" type="text/css" href="style/device.css">
 	<script src="js/jquery-1.12.3.min.js"></script>
 	<script src="js/particles.js"></script>
 	<script src="js/app.js"></script>
 </head>
 <body>
-	<section>
-    	<canvas width="2000" height="1000" id='particles'></canvas>
+	<div id='header' class='hidden'>
+		<a href="#home">
+			<img src="img/home.png">
+		</a>
+		<navigation>
+			{
+			<a href="#artistPortfolio">Artist Portfolio</a>
+			<a href="#classic-collection">Classic Collection</a>
+			<a href="#adBuilder">AdBuilder</a>
+			}
+		</navigation>
+	</div>
+
+	<section id='home'>
+    	<canvas id='particles'></canvas>
 		<div class='center'>			
 			<h1 class='myName'>Joseph Case</h1>
-			<p class='aboutMe'>A software engineer with over 3 years professional experience who loves writing lean, well structured code and creating cool stuff.</p>
+			<p class='aboutMe'>A passionate full-stack developer with over 3 years professional experience who loves challenging projects, learning new languages and writing lean and well structured code.</p>
 		</div>
 		<!-- <navigation>
 			Portfolio:	{
@@ -34,6 +50,27 @@
 		</a>
 	</section>
 	<section id='artistPortfolio'>
+		<div class='detail'>
+
+			<img src="img/gp.jpg">
+			<div class='info center'>
+				<h2>Artist Portfolio</h2>
+				<p class='langs'>
+					<span>Node.js</span>
+					<span>PHP</span>
+					<span>JS/JQuery</span>
+					<span>HTML5</span>
+					<span>CSS3</span>
+					<span>mySQL</span>
+					<span>Swig</span>
+				</p>
+				<p class='links'>
+					<a href="http://staging.giusypirrotta.com" target='_blank'>www.giusypirrotta.com</a>
+					<!-- <a href="https://github.com/JosephCase/giusypirrotta" target='_blank'><img src="GitHub-Mark-32px"><span>Website</span></a>
+					<a href="https://github.com/JosephCase/gp-cms" target='_blank'><img src="GitHub-Mark-32px"><span>CMS</span></a> -->
+				</p>
+			</div>		
+		</div>
 		<div class='content'>
 			<h3>A fully responsive artist portfolio website with a custom made CMS.</h3>
 			<p>A project developed in my spare time, it consists of a fully responsive portfolio website written in PHP (<a href="http://www.giusypirrotta.com"  target='_blank'>www.giusypirrotta.com</a>) and a Node.js CMS. The CMS enables to user to create and edit pages, text, image and video content, by writing to the mySQL database and saving associated files. The website then reads from the database, serving the content directly or using it to reference a saved file.</p>
@@ -58,29 +95,25 @@
         	</video>
 			<p>When editing a page the user it given graphical representation of the changes due to take place and can then save those changes once they are happy. When a page is saved the multiple changes are submitted to the server as a JSON set of instruction objects, with and associated files uploaded using FormData object. On the server the instructions are then processed asynchronously, updating the database and creating, updating or deleting any relevant files.</p>
 		</div>		
-		<div class='detail'>
-
-			<img src="img/gp.jpg">
-			<div class='info center'>
-				<h2>Artist Portfolio</h2>
-				<p class='langs'>
-					<span>Node.js</span>
-					<span>PHP</span>
-					<span>JS/JQuery</span>
-					<span>HTML5</span>
-					<span>CSS3</span>
-					<span>mySQL</span>
-					<span>Swig</span>
-				</p>
-				<p class='links'>
-					<a href="http://staging.giusypirrotta.com" target='_blank'>www.giusypirrotta.com</a>
-					<!-- <a href="https://github.com/JosephCase/giusypirrotta" target='_blank'><img src="GitHub-Mark-32px"><span>Website</span></a>
-					<a href="https://github.com/JosephCase/gp-cms" target='_blank'><img src="GitHub-Mark-32px"><span>CMS</span></a> -->
-				</p>
-			</div>		
-		</div>
 	</section>
 	<section id='classic-collection'>
+		<div class='detail'>
+			<img src="img/cc.jpg">
+			<div class='info center'>
+				<h2>Classic Collection</h2>
+				<p class='langs'>
+					<span>VB.Net</span>
+					<span>SQL</span>
+					<span>JS/JQuery</span>
+					<span>XSLT</span>
+					<span>CSS3</span>
+					<span>XML</span>
+				</p>
+				<p class='links'>
+					<a href="http://www.classic-collection.co.uk" target='_blank'><span>www.classic-collection.co.uk</span></a>
+				</p>
+			</div>			
+		</div>
 		<div class='content'>
 			<h3>A responsive travel website with pre-compiled CMS data for faster load times.</h3>
 			
@@ -108,25 +141,20 @@
 				<li>Page redirects.</li>
 			</ul>
 		</div>		
+	</section>
+	<section id='adBuilder'>
 		<div class='detail'>
-			<img src="img/cc.jpg">
+			<img src="http://redboxtalent.com/wp-content/uploads/2016/05/Tools-for-content-marketers-header-image-800x600.jpg">
 			<div class='info center'>
-				<h2>Classic Collection</h2>
+				<h2>AdBuilder</h2>
 				<p class='langs'>
-					<span>VB.Net</span>
-					<span>SQL</span>
+					<span>PHP</span>
 					<span>JS/JQuery</span>
-					<span>XSLT</span>
+					<span>HTML5</span>
 					<span>CSS3</span>
-					<span>XML</span>
-				</p>
-				<p class='links'>
-					<a href="http://www.classic-collection.co.uk" target='_blank'><span>www.classic-collection.co.uk</span></a>
 				</p>
 			</div>			
 		</div>
-	</section>
-	<section id='adBuilder'>
 		<div class='content'>
 			<h3>A development tool that converts layered psds into fully responsive cross device ad units.</h3>
 			
@@ -154,18 +182,6 @@
 				<li>Delete Elements.</li>
 			</ul>
 		</div>		
-		<div class='detail'>
-			<img src="http://redboxtalent.com/wp-content/uploads/2016/05/Tools-for-content-marketers-header-image-800x600.jpg">
-			<div class='info center'>
-				<h2>AdBuilder</h2>
-				<p class='langs'>
-					<span>PHP</span>
-					<span>JS/JQuery</span>
-					<span>HTML5</span>
-					<span>CSS3</span>
-				</p>
-			</div>			
-		</div>
 	</section>
 </body>
 </html>

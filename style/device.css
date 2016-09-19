@@ -1,0 +1,74 @@
+/*TABLET*/
+@media (max-width: 900px) {
+	section > div.detail.detail, body section > div.content {
+		display: block;
+		position: relative;
+		float: none;
+		width: auto;
+		margin: 0;
+		padding: 80px 50px 120px 50px;
+	}
+	section > div.detail.detail {
+		height: 500px;	
+		padding: 0 20px;	
+	}
+	section > div.detail img {
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: auto;
+		min-height: 100%;
+	}
+	/*div.detail .center {
+		display: block;
+		transform: none;
+	}*/
+}
+
+@media (max-width: 500px) {
+	h1.myName {
+		font-size: 40px;
+	}
+	p.aboutMe {
+		margin: 60px auto;
+	    width: 90%;
+	    font-size: 14px;
+	}
+	h3 {
+		font-size: 22px;
+	}
+	#header {
+		height: 92px;
+	}
+	#header.hidden {
+		top: -110px;
+	}
+	navigation {
+		width: 190px;
+	}
+	navigation a {
+		font-size: 14px;
+		line-height: 24px;
+	}
+	section > div.detail.detail {
+		height: 350px;	
+	}
+	ul {
+		padding-left: 20px;
+	}
+	#classic-collection img {
+		vertical-align: top;
+		margin: 10px auto;
+		display: block;
+	}
+	body section > div.content {
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+	section h2 {
+		font-size: 45px;
+	}
+	section .detail .info .langs > span {
+		font-size: 10px;
+	}
+}
