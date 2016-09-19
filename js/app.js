@@ -90,9 +90,9 @@ function headerScroll(e) {
 function sectionScroll() {
 	var scrollTop = $(window).scrollTop();
 	for (var i = sections.length - 1; i >= 0; i--) {
-		if(scrollTop < sections[i].offsetTop) {
+		if(scrollTop < sections[i].offsetTop - 20) {
 			sections[i].className = 'preStick';
-		} else if (scrollTop + window.innerHeight > sections[i].offsetTop + sections[i].offsetHeight) {
+		} else if (scrollTop + window.innerHeight > sections[i].offsetTop + sections[i].offsetHeight + 20) {
 			sections[i].className = 'postStick';
 		} else {
 			sections[i].className = 'stick';			

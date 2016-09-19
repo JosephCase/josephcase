@@ -46,6 +46,7 @@ section > div {
 	width: 20px;
 	bottom: 30px;
 	left: 50%;
+	padding: 5px;
 
 	-moz-transform: translateX(-50%);
 	-ms-transform: translateX(-50%);
@@ -74,6 +75,8 @@ navigation {
 
 navigation a {
 	margin: 0 10px;
+	text-decoration: none;
+	color: inherit;
 }
 
 #header {
@@ -86,6 +89,7 @@ navigation a {
 	background-color: #fff;
 	transition: top	0.5s, box-shadow 0.5s;
 	box-shadow: 0 0 20px 1px rgba(0,0,0,0.5);
+	transform: translateZ(0);
 }
 
 #header.hidden {
@@ -224,8 +228,8 @@ section .content {
 }
 
 section .content a {	
-	text-decoration: initial;
-	color: initial;
+	color: -webkit-link;
+    text-decoration: underline;
 }
 
 video {
@@ -271,10 +275,7 @@ video {
 	vertical-align: middle;
 }
 
-a {
-	text-decoration: inherit;
-	color: inherit;
-}
+
 
 
 /*Section specific*/
