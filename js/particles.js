@@ -10,7 +10,7 @@ var Needles = function(canvas, color, density) {
 	ctx.lineCap='round';	
     ctx.fillStyle = color;
     
-    ctx.globalAlpha = 0.5;
+    ctx.globalAlpha = 0.7;
     var stop = false;
 
     var pixels = [];
@@ -34,7 +34,7 @@ var Needles = function(canvas, color, density) {
     introSection.addEventListener('touchstart', userActionHandler);
     introSection.addEventListener('touchmove', userActionHandler);
 
-    // window.addEventListener('resize', resizeHandler);
+    window.addEventListener('resize', resizeHandler);
 
     function resizeHandler() {
         canvas.width = canvas.offsetWidth, canvas.height = canvas.offsetHeight;

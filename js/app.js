@@ -32,7 +32,7 @@ $(function() {
 
 function DOMReady() {
 
-    var needles = new Needles(document.getElementById('particles'), '#383737', 100);
+    var needles = new Needles(document.getElementById('particles'), '#383737', 150);
 
 	sections = document.getElementsByTagName('section');
 	videos = document.getElementsByTagName('video');
@@ -76,8 +76,6 @@ function resizeHandler() {
 }
 
 function headerScroll(e) {
-
-	console.log($(window).scrollTop() == scrollTop);
 		
 	if($(window).scrollTop() > scrollTop || scrollTop < window.innerHeight || !showHeader) {
 		document.getElementById('header').classList.add('hidden');
@@ -90,9 +88,9 @@ function headerScroll(e) {
 function sectionScroll() {
 	var scrollTop = $(window).scrollTop();
 	for (var i = sections.length - 1; i >= 0; i--) {
-		if(scrollTop < sections[i].offsetTop - 20) {
+		if(scrollTop < sections[i].offsetTop) {
 			sections[i].className = 'preStick';
-		} else if (scrollTop + window.innerHeight > sections[i].offsetTop + sections[i].offsetHeight + 20) {
+		} else if (scrollTop + window.innerHeight > sections[i].offsetTop + sections[i].offsetHeight) {
 			sections[i].className = 'postStick';
 		} else {
 			sections[i].className = 'stick';			
@@ -105,12 +103,10 @@ function videoScroll() {
 		var vidBounds = videos[i].getBoundingClientRect();
 		if(vidBounds.top + (0.5 * vidBounds.height) < window.innerHeight && vidBounds.bottom > 0 && videos[i].readyState === 4) {
 			if(!videos[i].playing) {
-				console.log('play');
 				videos[i].play();
 			}
 		} else {
 			if(videos[i].playing) {
-				console.log('pause');
 				videos[i].pause();
 			}
 		}

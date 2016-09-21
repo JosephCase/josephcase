@@ -9,8 +9,16 @@ html, body {
 	padding: 0;
 	/*background-color: #212121;*/
 	/*background: url('code.JPG');*/
+	color: black;
 }
 
+h1, h2, h4, h5 {
+	font-family: 'Josefin Sans', sans-serif;
+	font-weight: normal;
+}
+h4 {
+	font-weight: 700;
+}
 
 section	{
 	overflow: auto;
@@ -71,12 +79,16 @@ navigation {
     font-weight: bold;
     width: 100%;
     text-align: center;
+
+
+	/*font-family: 'Josefin Sans', sans-serif;*/
 }
 
 navigation a {
 	margin: 0 10px;
 	text-decoration: none;
 	color: inherit;
+	font-size: 14px;
 }
 
 #header {
@@ -128,9 +140,11 @@ section:first-of-type {
 }
 
 h3 {
-	font-size: 28px;
+	font-size: 30px;
 	font-style: italic;
 	font-weight: normal;
+	font-weight: 100;
+	line-height: 50px;
 }
 
 .content h4 + p {
@@ -141,16 +155,16 @@ h3 {
 h1.myName {
 	width: 100%;
 	text-align: center;
-	font-size: 70px;
+	font-size: 66px;
 	font-weight: normal;
 	margin-top: -20px;
 }
 p.aboutMe {
 	text-align: center;
     margin: 20px auto;
-    width: 390px;
+    width: 500px;
 	font-style: italic;
-	font-size: 22px;
+	font-size: 16px;
 }
 /*h1.myName:after {
 	content:  '{';
@@ -239,6 +253,7 @@ video {
 
 .content p {
 	margin: 36px auto;
+	color: #424242;
 }
 
 .content h3 {
@@ -246,6 +261,7 @@ video {
 }
 .content h4 {
 	margin-top: 60px;
+	text-transform: uppercase;
 }
 
 
@@ -258,14 +274,15 @@ video {
 }
 
 .links img {
-	height: 24px;
+	height: 20px;
 	margin-right: 2px;
+	vertical-align: text-bottom;
 }
 
 .links a {
-	display: block;
+	/*display: block;*/
 	text-decoration: underline;
-	margin: 10px;
+	margin: 6px;
 	color: #fff;
 	font-size: 15px
 	/*font-weight: bold;*/

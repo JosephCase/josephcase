@@ -12,7 +12,7 @@
 		height: 500px;	
 		padding: 0 20px;	
 	}
-	section > div.detail img {
+	section > div.detail > img {
 		top: 0;
 		left: 0;
 		width: 100%;
@@ -36,6 +36,7 @@
 	}
 	h3 {
 		font-size: 22px;
+		line-height: 40px;
 	}
 	#header {
 		height: 92px;
