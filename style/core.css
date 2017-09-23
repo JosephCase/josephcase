@@ -122,6 +122,10 @@ navigation a {
 	position: static;
 	margin: 10px auto;
 	padding: 0;
+    -moz-transform: none;
+	-ms-transform: none;
+	-o-transform: none;
+	-webkit-transform: none;
 	transform: none;
 }
 

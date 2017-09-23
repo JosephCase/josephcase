@@ -1,46 +1,46 @@
-var Needles = function(canvas, color, density) {
+var Needles = function(_canvas, color, density) {
 
-    canvas.width = canvas.offsetWidth, canvas.height = canvas.offsetHeight;
+    var cw, ch, ctx,
+    canvas = _canvas,
+    stop = false,
+    pixels = [],
+    colors = ['#f3a0ae', '#2c5d8a', '#a22529'];
 
-    var cw = canvas.offsetWidth, ch = canvas.offsetHeight, color = color,
+    createCTX();
 
-    mouseX = cw/2, mouseY = ch/2,
-    ctx = canvas.getContext('2d');
-    // ctx.lineWidth = 1,
-	ctx.lineCap='round';	
-    ctx.fillStyle = color;
+    var amount = density * cw * ch / 1e6;   //  - dependant on createCTX as this sets cw & ch
+
+    setupPixels();
+    addEventListeners();
     
-    ctx.globalAlpha = 0.7;
-    var stop = false;
+    function setupPixels() {
+        console.log(amount);
+        for (var i = 0; i < amount; i++) {
+            pixels.push({x: Math.random(), y: Math.random(), color: colors[Math.floor(3*Math.random())]});
+        }
+    }    
 
-    var pixels = [];
-    var introSection;
-
-    var colors = ['#f3a0ae', '#2c5d8a', '#a22529'];
-
-    console.log(density, cw, ch, 1e6)
-
-    var amount = density * cw * ch / 1e6;
-
-    for (var i = 0; i < amount; i++) {
-    	pixels.push({x: Math.random() * cw, y: Math.random() * ch, color: colors[Math.floor(3*Math.random())]});
+    function createCTX() {
+        cw = canvas.width = canvas.offsetWidth, ch = canvas.height = canvas.offsetHeight
+        ctx = canvas.getContext('2d');
+        ctx.lineCap='round';    
+        ctx.fillStyle = color;    
+        ctx.globalAlpha = 0.7;
     }
 
-    // draw();
+    function addEventListeners() {
+        var introSection = document.getElementsByTagName('section')[0]
 
-    introSection = document.getElementsByTagName('section')[0]
+        introSection.addEventListener('mousemove', userActionHandler);
+        introSection.addEventListener('touchstart', userActionHandler);
+        introSection.addEventListener('touchmove', userActionHandler);
 
-    introSection.addEventListener('mousemove', userActionHandler);
-    introSection.addEventListener('touchstart', userActionHandler);
-    introSection.addEventListener('touchmove', userActionHandler);
-
-    window.addEventListener('resize', resizeHandler);
+        window.addEventListener('resize', resizeHandler);
+    }
 
     function resizeHandler() {
-        canvas.width = canvas.offsetWidth, canvas.height = canvas.offsetHeight;
-        ctx = canvas.getContext('2d');
-        // ctx.lineWidth = 1;
-        ctx.lineCap='round';
+        createCTX();
+        draw();
     }
 
     function userActionHandler(e) {
@@ -65,38 +65,13 @@ var Needles = function(canvas, color, density) {
         for (var i = 0; i < pixels.length; i++) {
 
         	// var angle = Math.atan2(mouseY - pixels[i].y, mouseX - pixels[i].x);
+            var x = pixels[i].x * cw, y = pixels[i].y * ch
 
 	        // get the new origin/angle
-	        ctx.translate(pixels[i].x, pixels[i].y);
-
-            // console.log(pixels[i].x, pixels[i].y);
-
-	        //draw
-	        // ctx.beginPath();
-            // ctx.strokeStyle = pixels[i].color;
-
-	        //LINE
-            // ctx.moveTo(0 , 0);
-            // var lineWidth = 1000/((mouseY - pixels[i].y) / Math.sin(angle));
-            // lineWidth = (lineWidth > 20) ? 20 : lineWidth;
-            // ctx.lineWidth = lineWidth
-            // ctx.lineTo((-(mouseY - pixels[i].y) / Math.sin(angle))/10 , 0);
-
-            //BLOB
-            // var lineWidth = 1000/((mouseY - pixels[i].y) / Math.sin(angle));
-            // lineWidth = (lineWidth > 200) ? 200 : lineWidth;
-            // ctx.lineWidth = lineWidth;
-	        // ctx.lineTo(0 , 0);
-
-	        // TRIANGLE
-            // ctx.lineTo(3 , 0);
-            // ctx.lineTo(-3 , 3);
-            // ctx.fill();
-
-            // ctx.stroke();
+	        ctx.translate(x, y);
 
 
-            var size = 500/Math.sqrt(Math.pow(mouseX - pixels[i].x, 2) + Math.pow(mouseY - pixels[i].y, 2));
+            var size = 500/Math.sqrt(Math.pow(mouseX - x, 2) + Math.pow(mouseY - y, 2));
             // size = (size > 500) ? 500 : size;
 
 	        ctx.moveTo(0, 0);
@@ -107,7 +82,7 @@ var Needles = function(canvas, color, density) {
             ctx.fillStyle = pixels[i].color;
             ctx.fill();
 
-            ctx.translate(-pixels[i].x, -pixels[i].y);
+            ctx.translate(-x, -y);
 
 
         } 
