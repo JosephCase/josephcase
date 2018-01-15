@@ -17,7 +17,7 @@ var SkillCanvas = function(skillElem) {
 
     var cw, ch, ctx, lineWidth,
     canvas = skillElem.getElementsByTagName('canvas')[0],
-    level = skillElem.getAttribute('data-level') * 2,
+    level = skillElem.getAttribute('data-level'),
     duration = 1000,
     startTime = null,
     strokeColor = skillElem.getAttribute('data-color') || '#000',
