@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', DOMReady);
 
-var sections, videos, canvas = {}, scrollTop, showHeader = true;
+var sections, videos, canvas = {}, scrollTop, showHeader = true, skillCanvi = [];
 
 
 // add custom property of the HTML video object
@@ -34,6 +34,12 @@ function DOMReady() {
 
     var needles = new Needles(document.getElementById('particles'), '#383737', 150);
 
+    var skillElems = document.getElementsByClassName('skill');
+
+    for (var i = 0; i < skillElems.length; i++) {
+    	skillCanvi.push(new  SkillCanvas(skillElems[i]));
+    }
+
 	sections = document.getElementsByTagName('section');
 	videos = document.getElementsByTagName('video');
 	canvas.element = document.getElementById('particles');
@@ -44,14 +50,14 @@ function DOMReady() {
 	window.addEventListener('scroll', scrollHandler);
 	window.addEventListener('resize', resizeHandler);
 
-	resizeHandler(); //handles the pixel canvas display and section heights
+	// resizeHandler(); //handles the pixel canvas display and section heights
 
 
 
 }
 
 function setSectionHeight() {	
-	sections[0].style.height = window.innerHeight + 'px'	;
+	$('.fullHeight').css('height', window.innerHeight + 'px');
 }
 
 function scrollHandler(e) {
@@ -60,6 +66,7 @@ function scrollHandler(e) {
 		sectionScroll();
 	}
 	videoScroll();
+	skillScroll();
 }
 
 function resizeHandler() {
@@ -109,6 +116,17 @@ function videoScroll() {
 			if(videos[i].playing) {
 				videos[i].pause();
 			}
+		}
+	}
+}
+
+function skillScroll() {
+	var skillBox = document.getElementsByClassName('skillBox')[0];
+	var bounds = skillBox.getBoundingClientRect();
+	if(bounds.top + 300 < window.innerHeight) {
+		for (var i = skillCanvi.length - 1; i >= 0; i--) {
+			skillCanvi[i].play();
+			skillCanvi.splice(i, 1);
 		}
 	}
 }

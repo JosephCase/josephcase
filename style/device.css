@@ -25,6 +25,12 @@
 	}*/
 }
 
+@media (max-width: 800px) {
+	.skill {
+		margin: 30px calc((50% - 140px) / 2);
+	}
+}
+
 @media (max-width: 500px) {
 	h1.myName {
 		font-size: 40px;

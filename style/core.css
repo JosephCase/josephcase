@@ -41,7 +41,7 @@ section > div {
 .center {
 	position: relative;
 	margin: 0 auto;	
-	top: 50%;
+	top: 42%;
 	-moz-transform: translateY(-50%);
 	-ms-transform: translateY(-50%);
 	-o-transform: translateY(-50%);
@@ -61,6 +61,9 @@ section > div {
 	-o-transform: translateX(-50%);
 	-webkit-transform: translateX(-50%);
 	transform: translateX(-50%);
+
+	filter: invert(1);
+
 }
 
 navigation {
@@ -135,13 +138,13 @@ section:first-of-type {
 	/*background-color: #f77648;
 	border-bottom: 50px solid #212121;*/
 	box-sizing: border-box;
-    /*background-color: #292929;
-	color: #fff;*/
-    background-color: #fff;
+	color: #fff;
+    background-color: cadetblue;
     color: #000;
 	margin-top: 0;
 	height: 100vh;
 	overflow: hidden;
+	color: #fff;
 }
 
 h3 {
@@ -157,17 +160,28 @@ h3 {
 }
 
 
+
+.self {
+    background-image: url('../img/self.jpg');
+    width: 180px;
+    height: 180px;
+    filter: brightness(131%) grayscale(25%);
+    background-position: 100% center;
+    margin: auto;
+    background-size: auto 88%;
+    border-radius: 50%;
+    transform: rotateZ(-90deg);
+}
 h1.myName {
 	width: 100%;
-	text-align: center;
-	font-size: 66px;
-	font-weight: normal;
-	margin-top: -20px;
+    text-align: center;
+    font-weight: normal;
+    margin-bottom: 50px;
 }
 p.aboutMe {
 	text-align: center;
     margin: 20px auto;
-    width: 500px;
+    width: 400px;
 	font-style: italic;
 	font-size: 16px;
 }
@@ -184,6 +198,17 @@ p.aboutMe {
 	float: right;
 	overflow: hidden;
 }*/
+
+section#skills {
+	padding: 60px 0;
+	background-color: #fff;
+	font-family: 'Josefin Sans', sans-serif;
+}
+section#skills h3 {
+	font-style: normal;
+	text-align: center;
+	margin-bottom: 10px;
+}
 
 
 /*LHS*/
@@ -319,4 +344,28 @@ video {
 #adBuilder .detail {
 	/*background-color: #b92025;*/
 	background-color: #a22529;
+}
+
+
+
+/*skills*/
+.skillBox {
+	margin: auto;
+    width: 800px;
+    overflow-y: auto;
+    max-width: 100%;
+}
+.skill {
+	float: left;
+    margin: 30px;
+}
+.skill canvas {
+	width: 140px;
+    height: 140px;
+    /*background: pink;*/
+    /*border-radius: 50%;*/
+}
+.skill p {
+    text-align: center;
+    margin-top: 8px;
 }
