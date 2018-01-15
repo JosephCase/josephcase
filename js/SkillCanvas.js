@@ -17,10 +17,11 @@ var SkillCanvas = function(skillElem) {
 
     var cw, ch, ctx, lineWidth,
     canvas = skillElem.getElementsByTagName('canvas')[0],
-    level = skillElem.getAttribute('data-level'),
+    level = skillElem.getAttribute('data-level') * 2,
     duration = 1000,
     startTime = null,
-    strokeColor = skillElem.getAttribute('data-color') || '#000';
+    strokeColor = skillElem.getAttribute('data-color') || '#000',
+    max = 10;
     
     createCTX();
 
@@ -66,12 +67,12 @@ var SkillCanvas = function(skillElem) {
         var radius = (cw - lineWidth) / 2;
 
         ctx.beginPath();
-        ctx.arc(centerX, centerY, radius, 1.5 * Math.PI, (0.4 * currentLevel * Math.PI) + 1.5 * Math.PI, false);
+        ctx.arc(centerX, centerY, radius, 1.5 * Math.PI, ((2 / max) * currentLevel * Math.PI) + 1.5 * Math.PI, false);
         ctx.lineWidth = lineWidth;
-        var red = Math.floor((255 * currentLevel) / 5);;
-        var green = (255 - Math.floor((40 * currentLevel) / 5));
-        var blue = (200 - Math.floor((200 * currentLevel) / 5));;
-        var color = 'rgb(' + 255 +',' + 255 + ',' +  blue + ')';
+        var red = Math.floor((255 * currentLevel) / max);
+        var green = (255 - Math.floor((40 * currentLevel) / max));
+        var blue = (200 - Math.floor((200 * currentLevel) / max));
+        var color = 'rgb(' + 255 +',' + 215 + ',' +  blue + ')';
         ctx.strokeStyle = color;
         // ctx.strokeStyle = 'gold';
         ctx.stroke();
@@ -80,7 +81,7 @@ var SkillCanvas = function(skillElem) {
 
         ctx.font = "50px 'Josefin Sans'";
 
-        ctx.fillStyle = color;
+        ctx.fillStyle = 'rgb(255,215,0)';
         ctx.textAlign = "center";
         ctx.clearRect(cw/4,ch/4,cw/2,ch/2);
         ctx.fillText(score,cw/2,(ch/2) + 18);

@@ -166,6 +166,7 @@ h3 {
     width: 180px;
     height: 180px;
     filter: brightness(131%) grayscale(25%);
+    -webkit-filter: brightness(131%) grayscale(25%);
     background-position: 100% center;
     margin: auto;
     background-size: auto 88%;

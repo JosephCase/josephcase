@@ -125,8 +125,20 @@ function skillScroll() {
 	var bounds = skillBox.getBoundingClientRect();
 	if(bounds.top + 300 < window.innerHeight) {
 		for (var i = skillCanvi.length - 1; i >= 0; i--) {
-			skillCanvi[i].play();
-			skillCanvi.splice(i, 1);
+			(function (i) {
+				setTimeout(function () {
+					skillCanvi[i].play();
+					skillCanvi.splice(i, 0);
+				}, i*250)
+			}(i)) 
 		}
+		// for (var i = 0; i < skillCanvi.length; i++) {
+		// 	(function (i) {
+		// 		setTimeout(function () {
+		// 			skillCanvi[i].play();
+		// 			// skillCanvi.splice(i, 1);
+		// 		}, i*500)
+		// 	}(i))
+		// }
 	}
 }
