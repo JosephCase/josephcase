@@ -32,7 +32,7 @@
 		<div class='center'>			
 			<div class='self'></div>
 			<h1 class='myName'>Joseph Case</h1>
-			<p class='aboutMe'>A bright, well-rounded and enthusiastic Full-Stack Developer, with over 4 years professional experience.</p>
+			<p class='aboutMe'>Full stack software developer specialising in Javascript and front end.</p>
 		</div>
 		<navigation>
 			<span>{</span>
@@ -150,8 +150,13 @@
 		<div class='content'>
 			<h3>A development tool that converts layered psds into fully responsive cross device ad units.</h3>
 			
-			<p>Developed during my time at Bluequest<!-- <a href="http://www.bluequest.co.uk" target='_blank'>(www.bluequest.co.uk)</a> -->, this ad building tool developed in PHP allows our developers to create and edit the layout of cross device, fully responsive advertising unit, by simply dragging and dropping psds or images onto a work area - greatly improving our productivity.</p>
+			<p>Developed during my time at Bluequest, this ad building tool developed in PHP allows our developers to create and edit the layout of cross device, fully responsive advertising unit, by simply dragging and dropping psds or images onto a work area - greatly improving our productivity.</p>
 			<p>Once the ad has been created the user can edit its layout using the AdBuilder's editing tools and then has the freedom to develop bespoke features, such as navigation, animations and canvas features using custom code.</p>
+
+			<video muted controls>
+				<source src='video/adBuilder.webm' type='video/webm' />
+				<source src='video/adBuilder.mp4' type='video/mp4' />
+        	</video>
 
 			<h4>Core concept</h4>
 			<p>The ad is represented by a hierarchical PHP class structure Ad > View > Element. The application processes each layer of an uploaded psd, saving the image and storing it's size, position and reference to its image as an Element object. The Ad object then writes a HTML and CSS file representing the PSD in HTML form and saves the Ad object as JSON, so that it can be recalled and edited later.</p>
@@ -161,10 +166,6 @@
 
 			<h4>Editing</h4>
 			<p>The AdBuilder features a set of editing tools which enable the user to add content and edit the layout of an ad that it has created. It does this by re-instantiating the Ad object from it's saved JSON and then updating it based on the changes made, before rewriting the HTML, CSS and re-saving itself  as JSON.</p>
-			<video muted controls>
-				<source src='video/adBuilder.webm' type='video/webm' />
-				<source src='video/adBuilder.mp4' type='video/mp4' />
-        	</video>
 			<p>The editing tools allows the user to;</p>
 			<ul>
 				<li>Create new Elements by uploading images or psds.</li>
