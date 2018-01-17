@@ -100,48 +100,58 @@
 			<div class='info center'>
 				<h2>Artist Portfolio</h2>
 				<p class='langs'>
-					<span>Node.js</span>
-					<span>PHP</span>
-					<span>JS/JQuery</span>
-					<span>HTML5</span>
-					<span>CSS3</span>
+					<span>Node</span>
+					<span>React</span>
+					<span>Redux</span>
+					<span>React Router</span>
 					<span>mySQL</span>
-					<span>Swig</span>
+					<span>JS/JQuery</span>
+					<span>ES6</span>
+					<span>AWS</span>
+					<span>HTML</span>
+					<span>CSS</span>
+					<span>JWT</span>
+					<span>Babel</span>
+					<span>React Scripts</span>
 				</p>
 				<p class='links'>
 					<a href="http://www.giusypirrotta.com" target='_blank'>www.giusypirrotta.com</a>
 				</p>
 				<p class='links'>
-					<img src="img/GitHub-Mark-Light-32px.png"><a href='https://github.com/JosephCase/giusypirrotta' target='_blank'>View the Website on github</a>
-				</p>				
+					<img src="img/GitHub-Mark-Light-32px.png"><a href='https://github.com/JosephCase/GP-API' target='_blank'>API github</a>
+				</p>		
 				<p class='links'>
-					<img src="img/GitHub-Mark-Light-32px.png"><a href='https://github.com/JosephCase/gp-cms' target='_blank'>View the CMS on github</a>
+					<img src="img/GitHub-Mark-Light-32px.png"><a href='https://github.com/JosephCase/gp-site' target='_blank'>Site github</a>
+				</p>			
+				<p class='links'>
+					<img src="img/GitHub-Mark-Light-32px.png"><a href='https://github.com/JosephCase/gp-cms' target='_blank'>CMS github</a>
 				</p>
 			</div>		
 		</div>
 		<div class='content'>
-			<h3>A fully responsive artist portfolio website with a custom made CMS.</h3>
-			<p>A project developed in my own time, it consists of a fully responsive portfolio website written in PHP (<a href="http://www.giusypirrotta.com"  target='_blank'>www.giusypirrotta.com</a>) and a Node.js CMS. The CMS enables to user to create and edit pages, text, image and video content, by writing to the mySQL database and saving associated files. The website then reads from the database, serving the content directly or using it to reference a saved file.</p>
+			<h3>A single page application, artist portfolio website with a custom made CMS.</h3>
+			<p>A project I solely developed, it consists of 3 applications hosted on an AWS EC2 instance; a Node REST API which acts as the data layer over a mySQL database and writes and serves image/video content, a Node CMS which allows the user to create and edit pages, text, image and video content, and a React/Redux/React Router single page application website (<a href="http://www.giusypirrotta.com" target='_blank'>www.giusypirrotta.com</a>).</p>
 			
 
 			<h4>Key feature - Image optimisation</h4>
 
-			<p>It was important that the website could display high quality images at multiple sizes and across multiple devices, while still achieving fast load times. In order to achieve this the CMS converts uploaded images to various file sizes using Imagemagick cli. The website itself is then chooses the most appropriate image size to serve, based on the physical display width of the image on the page.</p>
+			<p>It was important that the website could display high quality images at multiple sizes and across multiple devices, whilst keeping download times to a minimum. In order to achieve this images uploaded to the CMS are piped to the API where they are written to disc at various dimensions using an npm ImageMagick wrapper. The website itself is then chooses the most appropriate image size to serve, based on the physical width of the image element on the page.</p>
 
 
 			<h4>The website</h4>
 
-			<p>The website uses mod_dir to route all requests to a single PHP script, which serves the relevant content from the mySQL database based on the HTTP request. The CMS inputted text is formatted using Markdown and the website has a simple session language toggle, which controls which content is displayed based on its language setting in the CMS.</p>
+			<p>I wanted to provide a slick user experience so developed the website as a single page application with no requests to the server when navigating between pages. In order to achieve this the website routinely requests all the data that it needs from the API and caches it on the server. Then when there is a request it creates a Redux store using the cached site data, renders the initial load on the server and sends it, along with the site data, to the client. On the client the store is then hydrated with the site data and on navigation, using React Router and the history object, events are dispatched to the store and a connected page component then renders the new page based on the existing data in the store, without the need to make further server requests.</p>
 
 
-			<h4>The CMS</h4>
+			<h4>The CMS &amp; API</h4>
 
-			<p>The CMS uses the Node Express framework to route HTTP requests, serve static content and handle user session. The user is able to create new and edit existing pages, and within a page create, update and delete image, video and text content.</p>
+			<p>The CMS essentially acts as a user interface for the API performing minimal backend logic. When editing a page the CMS gives the user a graphical representation of the changes due to take place and the user can then save those changes once they are happy. When a page is saved the multiple changes are PATCHED to the server as a JSON set of instruction objects, with and associated files uploaded using FormData object. These requests are then streamed over to the API.</p>
 			<video muted controls>
 				<source src='video/gp.webm' type='video/webm' />
 				<source src='video/gp.mp4' type='video/mp4' />
         	</video>
-			<p>When editing a page the user it given graphical representation of the changes due to take place and can then save those changes once they are happy. When a page is saved the multiple changes are submitted to the server as a JSON set of instruction objects, with and associated files uploaded using FormData object. On the server the instructions are then processed asynchronously, updating the database and creating, updating or deleting any relevant files.</p>
+        	<span class='caption'>N.B.	-	video shows an outdated version of the website, but the idea is much the same.</span>
+			<p>The API then asynchronously iterates over the JSON instruction objects, performing CRUD operations to the mySQL database and saving or deleting any associated image or video files.</p>
 		</div>		
 	</section>
 	<section id='adBuilder'>
@@ -158,9 +168,9 @@
 			</div>			
 		</div>
 		<div class='content'>
-			<h3>A development tool that converts layered psds into fully responsive cross device ad units.</h3>
+			<h3>A development tool that converts layered psds into both horizontally and vertically responsive cross device ad units.</h3>
 			
-			<p>Developed during my time at Bluequest, this ad building tool developed in PHP allows our developers to create and edit the layout of cross device, fully responsive advertising unit, by simply dragging and dropping psds or images onto a work area - greatly improving our productivity.</p>
+			<p>Developed during my time at Bluequest, this ad building tool developed in PHP allows our developers to create and edit the layout of cross device, horizontally and vertically responsive advertising unit, by simply dragging and dropping psds or images onto a work area - greatly improving our productivity.</p>
 			<p>Once the ad has been created the user can edit its layout using the AdBuilder's editing tools and then has the freedom to develop bespoke features, such as navigation, animations and canvas features using custom code.</p>
 
 			<video muted controls>

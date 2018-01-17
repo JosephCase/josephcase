@@ -265,7 +265,9 @@ section .detail .info {
 	text-align: center;
 }
 
-
+section .detail .info .langs {
+	margin: 16px 20px;
+}
 section .detail  .info .langs > span {
 	line-height: 40px;
 	margin: 3px;
@@ -340,6 +342,11 @@ video {
 
 .links a * {
 	vertical-align: middle;
+}
+
+section span.caption {
+	font-size: 13px;
+	font-style: italic;
 }
 
 
