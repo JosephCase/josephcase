@@ -41,7 +41,7 @@ section > div {
 .center {
 	position: relative;
 	margin: 0 auto;	
-	top: 42%;
+	top: 36%;
 	-moz-transform: translateY(-50%);
 	-ms-transform: translateY(-50%);
 	-o-transform: translateY(-50%);
@@ -52,7 +52,7 @@ section > div {
 #down {
 	position: absolute;
 	width: 20px;
-	bottom: 30px;
+	bottom: 15px;
 	left: 50%;
 	padding: 5px;
 
@@ -69,8 +69,8 @@ section > div {
 navigation {
 	box-sizing: border-box;
 	position: absolute;
-    bottom: 60px;
-     left: 50%; 
+    bottom: 45px;
+    left: 50%; 
     padding: 10px 0;
 
     -moz-transform: translateX(-50%);
@@ -82,16 +82,34 @@ navigation {
     font-weight: bold;
     width: 100%;
     text-align: center;
+	font-size: 14px;
 
 
-	/*font-family: 'Josefin Sans', sans-serif;*/
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+navigation .works {
+	position: absolute;
+	left: 50%;
+    -moz-transform: translateX(-50%);
+	-ms-transform: translateX(-50%);
+	-o-transform: translateX(-50%);
+	-webkit-transform: translateX(-50%);
+	transform: translateX(-50%); 
+}
+
+navigation .otherLinks {
+	float: right;
+	margin-right: 30px;
+}
+navigation .otherLinks a {
+	margin: 0 30px;
 }
 
 navigation a {
 	margin: 0 10px;
 	text-decoration: none;
 	color: inherit;
-	font-size: 14px;
     white-space: nowrap;
 }
 
@@ -124,7 +142,7 @@ navigation a {
 #header navigation {
 	display: block;
 	position: static;
-	margin: 10px auto;
+	margin: 13px auto;
 	padding: 0;
     -moz-transform: none;
 	-ms-transform: none;
@@ -174,17 +192,18 @@ h3 {
     transform: rotateZ(-90deg);
 }
 h1.myName {
-	width: 100%;
+    width: 100%;
     text-align: center;
     font-weight: normal;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
+    font-size: 80px;
 }
 p.aboutMe {
-	text-align: center;
+    text-align: center;
     margin: 20px auto;
     width: 400px;
-	font-style: italic;
-	font-size: 16px;
+    font-size: 14px;
+    font-family: 'Josefin Sans';
 }
 /*h1.myName:after {
 	content:  '{';
@@ -358,7 +377,7 @@ video {
 }
 .skill {
 	float: left;
-    margin: 30px;
+	margin: 30px calc((25% - 140px) / 2);
 }
 .skill canvas {
 	width: 140px;
